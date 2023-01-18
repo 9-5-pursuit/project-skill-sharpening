@@ -5,7 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --runInBand",
-    "watch": "jest --watchAll"
+    "watch": "jest --watchAll",
+    "test-1": "jest --watchAll ./__tests__/01-functions.test.js",
+    "test-2": "jest --watchAll ./__tests__/02-data-types.test.js",
+    "test-3": "jest --watchAll ./__tests__/03-control-flow.test.js",
+    "test-4": "jest --watchAll ./__tests__/04-arrays.test.js",
+    "test-5": "jest --watchAll ./__tests__/05-objects.test.js",
+    "test-6": "jest --watchAll ./__tests__/06-loops.test.js",
+    "test-7": "jest --watchAll ./__tests__/07-even-more-loops.test.js",
+    "test-8": "jest --watchAll ./__tests__/08-accessing.test.js",
+    "test-9": "jest --watchAll ./__tests__/09-word-problems.test.js"
   },
   "keywords": [],
   "author": "",
