@@ -151,17 +151,17 @@ function gradeAssignments(assignments) {
 
   for (var a of assignments) {
     if (a.kind=='PASS-FAIL'){
-      if (a.kind.score.received==a.kind.score.max) a.kind.status='PASSED'
-      else a.kind.status='FAILED'
+      if (a.score.received==a.score.max) a.status='PASSED'
+      else a.status='FAILED'
     }
     if (a.kind=='PERCENTAGE'){
-      if (a.kind.score.received/a.kind.score.max>=.80) a.kind.status=`PASSED: ${((a.kind.score.received/
-        a.kind.score.max)*100).toFixed(1)}%`
-      else a.kind.status=`FAILED: ${((a.kind.score.received/
-      a.kind.score.max)*100).toFixed(1)}%`
+      if (a.score.received/a.score.max>=.80) a.status=`PASSED: ${((a.score.received/
+        a.score.max)*100).toFixed(1)}%`
+      else a.status=`FAILED: ${((a.score.received/
+      a.score.max)*100).toFixed(1)}%`
     }
     if (a.kind=='ESSAY'){
-      a.kind.status=`SCORE: ${a.kind.score.received}/${a.kind.score.max}`
+      a.status=`SCORE: ${a.score.received}/${a.score.max}`
     }
   }
   return assignments
@@ -190,7 +190,15 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let arr = []
+  let arr2 = []
+  for (var p of people) {
+    if (p.hasMembership) arr.push(p.name);
+    else arr2.push(p.name)
+  }
+  return arr.concat(arr2)
+}
 
 module.exports = {
   applyDiscount,
