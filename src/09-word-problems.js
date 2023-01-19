@@ -19,7 +19,15 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  if (age<=10 || age>=65){
+    if (hasMembership) {priceInCents *= .70; return priceInCents}
+    else priceInCents *= .90; return priceInCents
+  } else {
+    if (hasMembership) {priceInCents *= .80; return priceInCents}
+    else return priceInCents
+  }
+}
 
 /**
  * getCartTotal()
@@ -40,7 +48,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  sum = 0
+  for (var p of products) {
+    sum += p.priceInCents*p.quantity
+  }
+  sum/=100
+  return `$${sum.toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +95,12 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (JSON.stringify(address1)==JSON.stringify(address2)) return "Same building.";
+  else if (address1.city==address2.city && address1.state==address2.state && address1.zip==address2.zip) return "Same city.";
+  else if (address1.state==address2.state) return "Same state.";
+  else return "Addresses are not near each other."
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +147,25 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+
+  for (var a of assignments) {
+    if (a.kind=='PASS-FAIL'){
+      if (a.kind.score.received==a.kind.score.max) a.kind.status='PASSED'
+      else a.kind.status='FAILED'
+    }
+    if (a.kind=='PERCENTAGE'){
+      if (a.kind.score.received/a.kind.score.max>=.80) a.kind.status=`PASSED: ${((a.kind.score.received/
+        a.kind.score.max)*100).toFixed(1)}%`
+      else a.kind.status=`FAILED: ${((a.kind.score.received/
+      a.kind.score.max)*100).toFixed(1)}%`
+    }
+    if (a.kind=='ESSAY'){
+      a.kind.status=`SCORE: ${a.kind.score.received}/${a.kind.score.max}`
+    }
+  }
+  return assignments
+}
 
 /**
  * createLineOrder()
