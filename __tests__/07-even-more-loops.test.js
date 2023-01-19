@@ -116,7 +116,7 @@ describe("findEqual()", () => {
     expect(findEqual([5, 7, 3, 1, 8, 2], 1)).toEqual(true);
   });
 
-  test("should return `false` if the element can be found in the array", () => {
+  test("should return `false` if the element can't be found in the array", () => {
     expect(findEqual([10, 20, 30, 40], -10)).toEqual(false);
     expect(findEqual([-100, 0, -10], 10)).toEqual(false);
     expect(findEqual([5, 7, 3, 1, 8, 2], 10)).toEqual(false);
