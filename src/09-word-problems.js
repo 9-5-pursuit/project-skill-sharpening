@@ -166,26 +166,21 @@ function gradeAssignments(assignments) {
   return assignments.map((assignment) => {
     let status;
     if (assignment.kind === "PASS-FAIL") {
-      if (assignment.score.received === assignment.score.max) {
-        status = "PASSED";
-      } else {
-        status = "FAILED";
-      }
+      status =
+        assignment.score.received === assignment.score.max
+          ? "PASSED"
+          : "FAILED";
     } else if (assignment.kind === "PERCENTAGE") {
       const percentage =
         (assignment.score.received / assignment.score.max) * 100;
       status =
         percentage >= 80
-          ? `PASSED: ${Math.round(percentage * 10) / 10}%`
-          : `FAILED: ${Math.round(percentage * 10) / 10}%`;
+          ? `PASSED: ${percentage.toFixed(1)}%`
+          : `FAILED: ${percentage.toFixed(1)}%`;
     } else {
       status = `SCORE: ${assignment.score.received}/${assignment.score.max}`;
     }
-
-    return {
-      ...assignment,
-      status,
-    };
+    return { ...assignment, status };
   });
 }
 
