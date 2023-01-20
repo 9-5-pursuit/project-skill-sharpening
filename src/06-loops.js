@@ -52,14 +52,10 @@ function rangeOdd(min, max) {
  *  //> [ 11, 13, 15, 17 ]
  */
 function rangeEveryOther(min, max) {
-  var arr = []
-  var count = 0
-  for (var i = min; i<=max; i++) {
-    if (count%2==0) {
-      arr.push(i)
-      count = 0
-    }
-    count ++
+  let arr = []
+  while (min<=max) {
+      arr.push(min)
+      min += 2
   }
   return arr
 }
