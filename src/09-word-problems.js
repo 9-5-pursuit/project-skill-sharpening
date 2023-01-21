@@ -19,8 +19,24 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
-
+function applyDiscount(priceInCents, age, hasMembership) {
+    if (age <= 10 || age >= 65) {
+      if (hasMembership) {
+        priceInCents *= .70; 
+        return priceInCents
+      } else { 
+        priceInCents *= .90; 
+        return priceInCents
+      } else { 
+        if (hasMembership) {
+        priceInCents *= .80; 
+        return priceInCents
+      } else {
+        return priceInCents
+    }
+}
+}
+}
 /**
  * getCartTotal()
  * ---------------------
@@ -40,7 +56,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  sum = 0
+  for (var p of products) {
+    sum += p.priceInCents * p.quantity
+  }
+  sum /= 100
+  return `$${sum.toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +103,17 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+    if (JSON.stringify(address1) === JSON.stringify(address2)) {
+      return "Same building.";
+    } else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+      return "Same city.";
+    } else if (address1.state==address2.state) {
+      return "Same state.";
+    } else {
+      return `Error: ${address1} and ${address2} are not close by. Why not try entering two locations within the same city and state?`;
+  }
+}
 
 /**
  * gradeAssignments()
@@ -186,6 +219,7 @@ function createLineOrder(people) {
         return arr2.push(p.name)
     }
     return arr.concat(arr2)
+}
 }
 
 module.exports = {
