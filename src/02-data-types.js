@@ -9,7 +9,13 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+
+return str?.length
+
+}
+
+getLengthOfString();
 
 /**
  * convertToNumber()
@@ -22,7 +28,13 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+
+  return Number(val)
+
+}
+
+convertToNumber();
 
 /**
  * convertToString()
@@ -36,7 +48,15 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+
+
+function convertToString(val) {
+
+return String(val)
+
+}
+
+
 
 /**
  * convertToShoutingText()
@@ -49,7 +69,11 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+
+  return text.toUpperCase()
+
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +86,11 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+
+return text.toLowerCase()
+
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +107,14 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+
+// returns boolean
+// includes method
+function checkIfCharacterIsInString(text, character) {
+
+  return text.includes(character)
+
+}
 
 /**
  * isEven()
@@ -95,7 +130,17 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+
+// num is even if remainder is 0
+function isEven(num) {
+
+if (num % 2 === 0) {
+  return true
+} else if (num % 2 !== 0) {
+  return false
+}
+
+}
 
 /**
  * isOdd()
@@ -111,7 +156,16 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+
+// basically just doing the opposite of above
+function isOdd(num) {
+
+  if (num % 2 === 0) {
+    return false
+  } else if (num % 2 !== 0) {
+    return true
+  }
+}
 
 /**
  * isTruthy()
@@ -127,7 +181,15 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+
+  if (Boolean(val) === true) {
+    return true
+  } else if (Boolean(val) === false) {
+    return false
+  }
+
+}
 
 /**
  * isFalsy()
@@ -143,7 +205,17 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+
+// opposite of above
+function isFalsy(val) {
+
+  if (Boolean(val) === true) {
+    return false
+  } else if (Boolean(val) === false) {
+    return true
+  }
+
+}
 
 // Do not change the code below.
 module.exports = {
