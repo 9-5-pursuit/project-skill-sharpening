@@ -52,7 +52,7 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  const cart = [
       { name: "T-Shirt", priceInCents: 1200, quantity: 1 },
       { name: "Socks", priceInCents: 900, quantity: 2 },
-    ];
+    ]; 
     getCartTotal(cart);
  *  //> "$30.00"
  */
