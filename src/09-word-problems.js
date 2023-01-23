@@ -19,7 +19,35 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+
+  // let total = 0
+
+  // let yes = age <= 10 || age >= 65
+  let discount;
+  if (age <= 10 || age >= 65 ){
+    discount = priceInCents * 0.1;  //10% off
+    priceInCents -= discount;
+  }
+
+  if (hasMembership === true){
+    discount = priceInCents * 0.2;  //20% off
+    priceInCents -= discount;
+  }
+ let total = 0
+  if (hasMembership === true && (age <= 10 || age >= 65 )){
+    discount = priceInCents * 0.3;  //30% off
+    total = (priceInCents - discount); 
+    return total
+  }
+
+  return priceInCents
+
+
+
+
+
+}
 
 /**
  * getCartTotal()
@@ -40,7 +68,43 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+
+
+  let total = 0
+
+  for (let i = 0; i < products.length; i++){
+
+    total = total + products[i].quantity
+  //   let items = 0
+  //   items = items + products[i].quantity
+    
+
+    // let price = products[i].priceInCents
+
+    // let totalCost = items * price
+
+    return total
+
+    // console.log(total); 
+  }
+
+  // return `$${(totalCost/100).toFixed(2)}`
+}
+
+  // [{"name": "T-Shirt", "priceInCents": 1200, "quantity": 1}, 
+  // {"name": "Shoes", "priceInCents": 8950, "quantity": 1}, 
+  // {"name": "Skirt", "priceInCents": 4400, "quantity": 1}, 
+  // {"name": "Socks", "priceInCents": 900, "quantity": 1}]
+
+
+
+//   [{"name": "T-Shirt", "priceInCents": 1200, "quantity": 2}, 
+//   {"name": "Shoes", "priceInCents": 8950, "quantity": 2}, 
+//   {"name": "Skirt", "priceInCents": 4400, "quantity": 3}, 
+//   {"name": "Socks", "priceInCents": 900, "quantity": 4}]
+
+// }
 
 /**
  * compareLocations()
