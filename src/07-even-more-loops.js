@@ -131,7 +131,6 @@ function sumArray(array) {
   }
    console.log(sumArray([10, 0, 10, 11]));//output:31
 
-
 /**
  * oddArray()
  * ---------------------
@@ -241,6 +240,7 @@ function findLargest(array) {
 }
 
 console.log(findLargest([ 0, 11, -2, 5 ])); // Output: 11 because it is the largest number in the array.
+
 
 /**
  * findEqual()
