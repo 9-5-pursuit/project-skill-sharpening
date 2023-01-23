@@ -113,6 +113,7 @@ function checkIfCharacterIsInString(text, character) {
   console.log(checkIfCharacterIsInString("hello there", "a")); // false
   
 
+  
 /**
  * isEven()
  * ---------------------
