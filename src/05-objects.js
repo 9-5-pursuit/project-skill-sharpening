@@ -15,7 +15,6 @@ function createEmptyObject() {
   }
   console.log(createEmptyObject());// outputs {}
 
-
 /**
  * createObjectWithValue()
  * ---------------------
