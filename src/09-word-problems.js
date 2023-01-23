@@ -14,12 +14,35 @@
  *  //> 1000
  *
  *  applyDiscount(1000, 66, false);
+ * 
  *  //> 900
  *
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+let discount = 1;
+  let cost = priceInCents;
+
+if(hasMembership && age <= 10 || age >= 65) {
+   discount -= .10;
+
+   if(hasMembership) {
+    discount -= .20;
+  // }
+  //  if(age <= 10 || age >= 65) {
+  //   discount -= .20
+
+// if(age <= 10 || age >= 65) {
+//   discout 
+
+   } 
+  
+}
+
+return cost * discount;
+}
+
 
 /**
  * getCartTotal()
@@ -40,7 +63,12 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+ let total = 0;
+for(let i = 0; i <= products.length; i++) {
+
+}
+}
 
 /**
  * compareLocations()
@@ -80,7 +108,19 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+if(address1.state === address2.state) {
+  if(address1.city === address2.city) {
+    if(address1.street === address2.street) {
+      return 'Same building.'
+    } return 'Same city.'
+  } return 'Same state.'
+} else {
+  return `Addresses are not near each other.`
+}
+
+}
 
 /**
  * gradeAssignments()
@@ -152,7 +192,13 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+
+
+
+
+
+}
 
 module.exports = {
   applyDiscount,
