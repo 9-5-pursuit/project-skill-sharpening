@@ -12,7 +12,16 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let chunk;
+  let result = []
+  for (let i = 0; i < array.length;) {
+    chunk = array.splice(i, 1)
+    let newChunk = chunk[0] + "!"
+    result.push(newChunk)
+  }
+    return result;
+  }
 
 /**
  * shoutWhileLoop()
@@ -28,7 +37,17 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let chunk;
+  let result = [];
+  let i = 0;
+  while (i < array.length) {
+    chunk = array.splice(i, 1);
+    let updatedChunk = chunk[0] + "!"
+    result.push(updatedChunk)
+  }
+  return result;
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +63,15 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let result = [];
+  let chunk;
+  for (const element of array) {
+    chunk = element + "!";
+    result.push(chunk);
+  }
+  return result;
+}
 
 /**
  * sumArray()
@@ -57,7 +84,14 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  result = 0;
+  for (let i = 0; i < array.length;) {
+    arr = array.splice(i, 1)
+    result += arr[i];
+  }
+  return result;
+}
 
 /**
  * oddArray()
@@ -70,7 +104,28 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let result = [];
+  for (const element of array) {
+    if (element % 2 === 1) {
+      result.push(element);
+    }
+  }
+  return result;
+}
+// {
+//   result = [];
+//   for (let i = 0; i < array.length;) {
+//     if (array[i] % 2 === 0) {
+//       let throwAways = array.splice(i, 1);
+//     } 
+//     if (array[i] % 2 === 1) {
+//       let addThis = array.splice(i, 1) 
+//        result.push(addThis)
+//     }
+//   }
+//   return result;
+// }
 
 /**
  * evenArray()
@@ -83,7 +138,15 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let result = [];
+  for (const element of array) {
+    if (element % 2 === 0) {
+      result.push(element);
+    }
+  }
+  return result;
+}
 
 /**
  * findSmallest()
@@ -96,7 +159,21 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let result;
+  let arr = array.splice(0,1);
+  for (let i = 0; i < array.length;) {
+    if (array[i] < arr[0]) {
+      arr = array.splice(i,1);
+    }
+    if (array[i] > arr[0]) {
+      let throwAway = array.splice(i, 1);
+    }
+  }
+  result = arr[0];
+  return result;
+  }
+
 
 /**
  * findLargest()
@@ -109,7 +186,20 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let result;
+  let arr = array.splice(0, 1);
+  for (let i = 0; i < array.length;) {
+    if (array[i] > arr[0]) {
+      arr = array.splice(i, 1);
+    }
+    if (array[i] < arr[0]) {
+      let throwAways = array.splice(i, 1);
+    }
+  }
+  result = arr[0];
+  return result;
+}
 
 /**
  * findEqual()
@@ -126,7 +216,17 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  let result = false
+  for (let i = 0; i < array.length; i ++) {
+    if (array[i] === selected) {
+      result = true;
+    } else {
+      continue;
+    }
+  }
+  return result;
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +243,19 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  result = array.splice(0, 1);
+  for (let i = 0; i < array.length;) {
+    if (result.includes(array[i])) {
+      let throwAways = array.splice(i, 1);
+    } 
+    else {
+      let pushThis = array.shift();
+      result.push(pushThis) 
+    }
+    return result
+  }
+}
 
 // Do not change any code below this line.
 module.exports = {
