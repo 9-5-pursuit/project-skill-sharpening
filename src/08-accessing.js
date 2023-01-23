@@ -32,7 +32,12 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  //console.log(person)
+  //console.log(person.names.first)
+
+  return person.names.first
+}
 
 /**
  * getLastName()
@@ -45,7 +50,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +65,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return (person.address.street)
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +80,11 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  let amount = (person.numbers)
+
+  return (amount.length)
+}
 
 /**
  * getFirstPhoneNumber()
@@ -87,7 +100,10 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  let phoneNumbers = person.numbers
+  return phoneNumbers[0]
+}
 
 /**
  * getLastPhoneNumber()
@@ -103,7 +119,10 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  let phoneNumbers = person.numbers
+  return phoneNumbers[phoneNumbers.length - 1]
+}
 
 /**
  * getFullName()
@@ -116,7 +135,27 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  //console.log(person)
+
+  // let emptyString = []
+  // emptyString.push(person.names.first)
+  // emptyString.push(person.names.middle)
+  // emptyString.push(person.names.last)
+
+  // let joined = emptyString.join(" ")
+  // return (joined)
+
+  //----------------------- Two Different Methods ----------------------------------//
+  let namesToArray = Object.values(person.names)
+  //console.log(namesToArray)
+  let joined = namesToArray.join(" ")
+  //console.log(joined)
+  return joined
+
+
+
+}
 
 /**
  * getCityAndState()
@@ -132,7 +171,18 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  let addressToArray = Object.values(person.address)
+  //console.log(addressToArray)
+
+  let array = []
+  array.push(addressToArray[2])
+  array.push(addressToArray[3])
+
+
+  let joined = array.join(", ")
+  return (joined)
+}
 
 /**
  * getFullAddress()
@@ -148,7 +198,44 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+
+
+
+
+
+  // let arrayWithAddress = []
+
+  // for (let key in person.address) {
+  //   arrayWithAddress += (person.address[key])
+
+  // }
+
+
+
+
+
+
+  //let newArray =
+
+  //let joined = arrayWithAddress.join(", ")
+  //console.log(joined)
+
+
+
+
+
+
+
+
+
+  // let fullAddressToArray = Object.values(person.address)
+  // console.log(fullAddressToArray)
+
+  // let joined = fullAddressToArray.join(", ")
+  // console.log(joined)
+  // return joined
+}
 
 /**
  * getFlatObject()
@@ -171,7 +258,11 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  //console.log(person)
+
+
+}
 
 // Do not change the code below.
 module.exports = {
