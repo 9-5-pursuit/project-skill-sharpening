@@ -297,7 +297,6 @@ console.log(evenOrOdd(11)); // should output "Odd"
 console.log(evenOrOdd(48)); // should output "Even"
 
 
-
 /**
  * evenOrOddWithTernary()
  * ---------------------
