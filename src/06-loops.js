@@ -247,6 +247,12 @@ function timesIndex(array) {
  *  //> [ 5, 7, 16 ]
  */
 function cumulativeSum(array) {
+  let total = 0;
+  let arr = [];
+  for (let i = 0; i <array.length; i++) {
+    total += array[i];
+    arr.push(total);
+  }
   // let result = [];
   // result.push(array[0])
   // if (let i = 1; i < array.length; i++) {
@@ -255,6 +261,7 @@ function cumulativeSum(array) {
   //   }
   // }
   // return result;
+  return arr;
 }
 
 

@@ -161,25 +161,22 @@ function aroundTheWorldGreeting(language) {
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
- function aroundTheWorldGreetingWithSwitch(language) {}
-//   int language = "english";
-//   String result;
-//   switch (language) {
-//     case spanish: 
-//       System.out.println ("Hola Mundo");
-//                   break;
-//     case german:
-//       System.out.println("Hallo Welt");
-//                   break;
-//     case english:
-//       System.out.println("Hello World";)
-//                   break;
-//     case null:
-//       System.out.println("Hello World");
-//                   break;
-//   }
-//   return result;
-// }
+ function aroundTheWorldGreetingWithSwitch(language) {
+  String result;
+  switch (language) {
+    case spanish: 
+      result = "Hola Mundo";
+                  break;
+    case german:
+      result = "Hallo Welt";
+                  break;
+    default:
+      "Hello World";
+                  break;
+  return result;
+}
+ }
+ 
 
 /**
 //  * calculateLetterGrade()
