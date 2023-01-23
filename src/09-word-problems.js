@@ -229,7 +229,8 @@ function createLineOrder(people) {
   for(let i = 0; i < people.length; i++)
   if (people[i].hasMembership){
     array1.push(people[i].name)
-}else{
+}
+else{
   array2.push(people[i].name)
 }
 array3 = array1.concat(array2)
