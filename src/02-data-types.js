@@ -9,7 +9,12 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+
+ return str.length;
+}
+console.log(getLengthOfString("down")); //output is 4
+
 
 /**
  * convertToNumber()
@@ -22,7 +27,13 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  return Number(val);
+}
+
+console.log(convertToNumber("111"));
+//This function took the param "val" and used the Number() function to comvert it to a number.
+
 
 /**
  * convertToString()
@@ -36,7 +47,12 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  return val.toString();
+
+}
+console.log(convertToString(99));
+
 
 /**
  * convertToShoutingText()
@@ -49,7 +65,11 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  return text.toUpperCase();
+
+}
+console.log(convertToShoutingText("Hello There"));
 
 /**
  * convertToWhisperText()
@@ -62,8 +82,12 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
-
+function convertToWhisperText(text) {
+  
+    return text.toLowerCase();
+  }
+  console.log(convertToWhisperText("Hello There"));
+   
 /**
  * checkIfCharacterIsInString()
  * ---------------------
@@ -79,7 +103,16 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+
+    return text.indexOf(character) !== -1;
+
+  }
+  console.log(checkIfCharacterIsInString("hello there", "e")); // true
+  
+  console.log(checkIfCharacterIsInString("hello there", "a")); // false
+  
+
 
 /**
  * isEven()
@@ -95,7 +128,18 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+
+function isEven(num) {
+  return num % 2 === 0;
+}
+
+console.log(isEven(10));
+
+console.log(isEven(11));
+
+
+//if the num is divisible by 2, the function returns "true"
+
 
 /**
  * isOdd()
@@ -111,8 +155,13 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  return num % 2 !== 0;
 
+}
+console.log(isOdd(10));//10 is divisible by 2 so the function returns "false"
+
+console.log(isOdd(11));//11 is not divisible by 2 so the function returns "true"
 /**
  * isTruthy()
  * ---------------------
@@ -127,7 +176,14 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+    return !!val;
+  }
+  
+  console.log(isTruthy(10)); // true
+  console.log(isTruthy(null)); // false
+  
+
 
 /**
  * isFalsy()
@@ -143,7 +199,13 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  return !val;
+
+}
+console.log(isFalsy(undefined));//true
+
+console.log(isFalsy(" ")); //false
 
 // Do not change the code below.
 module.exports = {

@@ -5,11 +5,17 @@
  * HINT: What data type do we want to return here?
  * @returns {boolean}
  *
+ * 
  * EXAMPLE:
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+ 
+function alwaysTrue() {
+  return true;
+}
+console.log(alwaysTrue());
+
 
 /**
  * greet()
@@ -24,7 +30,11 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+ function greet(Ian) {
+  return "Hello, " + Ian + ".";
+}
+
+console.log (greet("Ian"));
 
 /**
  * add()
@@ -39,7 +49,14 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+// This function takes in two parameters "a" & "b"
+function add(a, b) {
+  return a + b;
+}
+
+let result = add (10, 20);
+console.log(result); //sum should equal 30
+
 
 /**
  * multiply()
@@ -54,7 +71,15 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+  function multiply(a, b) {
+
+    return a * b;
+  }
+  
+  let addition = multiply (2, 5);
+  console.log(addition); //sum should equal 10
+  
+
 
 /**
  * average()
@@ -74,8 +99,11 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
-
+function average(a, b) {
+  return (a + b) / 2; //add then divide by 2 to get average
+}
+  let division = average(10, 6);
+  console.log(division); //average should ouput 8 
 /**
  * averageThree()
  * ---------------------
@@ -93,7 +121,13 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+  function averageThree(a, b, c) {
+
+    return (a + b + c) / 3; //add then divide by three to get average
+  }
+    let divisionThree = averageThree(10, 11, 19);
+    console.log(divisionThree); //average output should be 10
+
 
 /**
  * compareTypes()
@@ -112,7 +146,14 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+
+function compareTypes(a, b) {
+  return typeof a === typeof b;
+}
+
+console.log(compareTypes("left", "right")); //output true
+console.log(compareTypes("left", 10)); // outout false
+
 
 /**
  * flipSign()
@@ -124,6 +165,7 @@ function compareTypes() {}
  * HINT: Using pencil and paper, how would you make a positive number look negative?
  * How could you apply this to a variable?
  * 
+ * 
  * EXAMPLE:
  *  flipSign(-10);
  *  //> 10
@@ -131,7 +173,14 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+//function multiplies "a" by -1. This flips the sign and makes positive numbers negative and negative numbers positive.
+  function flipSign(a) {
+  return -1 * a;
+
+}
+  console.log(flipSign(10)); //Output will be -10
+
+  console.log(flipSign(-50)); // Output will be 50
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +200,13 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+
+    return a + " " + b + " " + c + " " + d + " " + e;
+  }
+  
+  console.log(joinStringsWithSpaces("left", "right", "up", "down", "away")); // Output: "left right up down away"
+  
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +223,14 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+
+ return a[0] + a [a.length-1];
+  
+}
+
+console.log(getFirstAndLastCharacter("upwards"));
+
 
 // Do not change the code below.
 module.exports = {
