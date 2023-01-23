@@ -228,7 +228,6 @@ function createLineOrder(people) {
   }
   lineOrder.push(priority);
   lineOrder.push(other);
-  console.log(lineOrder);
   return lineOrder.flat(1);
   }
 //   if statement
