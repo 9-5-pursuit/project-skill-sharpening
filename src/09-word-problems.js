@@ -57,7 +57,7 @@ function applyDiscount(priceInCents, age, hasMembership) {
 function getCartTotal(products) {
   let totalCost = 0;
 
-  for (product of products) {
+  for (const product of products) {
     totalCost += product.priceInCents * product.quantity;
   }
 
@@ -114,7 +114,7 @@ function compareLocations(address1, address2) {
   let stateBool;
   let zipBool;
 
-  for (element in address1) {
+  for (const element in address1) {
     if (address1[element] === address2[element]) {
       boolArr.push(true);
     } else {
@@ -184,7 +184,7 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
-  for (assignment of assignments) {
+  for (const assignment of assignments) {
     let received = assignment.score.received;
     let max = assignment.score.max;
 
@@ -238,13 +238,13 @@ function gradeAssignments(assignments) {
 function createLineOrder(people) {
   const lineOrder = [];
 
-  for (person of people) {
+  for (const person of people) {
     if (person.hasMembership === true) {
       lineOrder.push(person.name);
     }
   }
 
-  for (person of people) {
+  for (const person of people) {
     if (person.hasMembership !== true) {
       lineOrder.push(person.name);
     }

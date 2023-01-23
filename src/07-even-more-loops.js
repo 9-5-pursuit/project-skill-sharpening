@@ -66,7 +66,7 @@ function shoutWhileLoop(array) {
 function shoutForOfLoop(array) {
   const shoutArr = [];
 
-  for (string of array) {
+  for (const string of array) {
     shoutArr.push(`${string}!`);
   }
 
@@ -87,7 +87,7 @@ function shoutForOfLoop(array) {
 function sumArray(array) {
   let sum = 0;
 
-  for (number of array) {
+  for (const number of array) {
     sum += number;
   }
 
@@ -108,7 +108,7 @@ function sumArray(array) {
 function oddArray(array) {
   const newOddArr = [];
 
-  for (number of array) {
+  for (const number of array) {
     if (number % 2 !== 0) {
       newOddArr.push(number);
     }
@@ -131,7 +131,7 @@ function oddArray(array) {
 function evenArray(array) {
   const newOddArr = [];
 
-  for (number of array) {
+  for (const number of array) {
     if (number % 2 === 0) {
       newOddArr.push(number);
     }
@@ -154,7 +154,7 @@ function evenArray(array) {
 function findSmallest(array) {
   let smallestNum = array[0];
 
-  for (number of array) {
+  for (const number of array) {
     if (number < smallestNum) {
       smallestNum = number;
     }
@@ -177,7 +177,7 @@ function findSmallest(array) {
 function findLargest(array) {
   let largestNum = 0;
 
-  for (number of array) {
+  for (const number of array) {
     if (number > largestNum) {
       largestNum = number;
     }
@@ -202,7 +202,7 @@ function findLargest(array) {
  *  //> false
  */
 function findEqual(array, selected) {
-  for (number of array) {
+  for (const number of array) {
     if (selected === number) {
       return true;
     }
@@ -229,7 +229,7 @@ function findEqual(array, selected) {
 function removeDuplicates(array) {
   const newArr = [];
 
-  for (number of array) {
+  for (const number of array) {
     if (newArr.includes(number)) {
       continue;
     } else {

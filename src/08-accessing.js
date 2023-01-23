@@ -205,11 +205,11 @@ function getFullAddress(person) {
 function getFlatObject(person) {
   const newPersonObj = {};
 
-  for (name in person.names) {
+  for (const name in person.names) {
     newPersonObj[name] = person.names[name];
   }
 
-  for (element in person.address) {
+  for (const element in person.address) {
     newPersonObj[element] = person.address[element];
   }
 
