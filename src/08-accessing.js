@@ -32,8 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
 
+  function getFirstName(person) {}
+    
 /**
  * getLastName()
  * ---------------------
@@ -45,7 +46,16 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.last;
+    }
+    
+  //   let person1 = {
+  //    / last: "Rojas"
+  //  }
+  
+    console.log(getLastName(person1)); // Output: "Rojas"
+  
 
 /**
  * getAddressStreet()
@@ -58,8 +68,40 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
 
+function getAddressStreet(person) {
+  let street = person.address.street;
+  if (person.address.unit) {
+    let streetArr = street.split(" ");
+    streetArr.pop();
+    street = streetArr.join(" ");
+  }
+  return street;
+}
+
+const person = {
+    names: {
+      first: "Rachel",
+      middle: "Eleanor",
+      last: "Rojas"
+    },
+    address: {
+      street: "697 Pine Drive",
+      unit: "2A",
+      city: "Staten Island",
+      state: "NY",
+      zip: "10306"
+    },
+    numbers: [
+      7185550921,
+      7185558611
+    ]
+  };
+  let street = getAddressStreet(person);
+  console.log(street); 
+  
+   
+  
 /**
  * getCountOfPhoneNumbers()
  * ---------------------
@@ -88,6 +130,8 @@ function getCountOfPhoneNumbers(person) {}
  *  //> 7185550921
  */
 function getFirstPhoneNumber(person) {}
+ 
+
 
 /**
  * getLastPhoneNumber()
@@ -116,8 +160,11 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
-
+    
+    function getFullName(person) {} 
+    
+      
+      
 /**
  * getCityAndState()
  * ---------------------

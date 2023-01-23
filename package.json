@@ -21,5 +21,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.0.6"
+  },
+  "dependencies": {
+    "8-0-skill-sharpening-project": "github:ShakeenaLesane/project-skill-sharpening"
   }
 }
