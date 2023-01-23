@@ -11,7 +11,19 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+
+  let minimum = Math.min(array[0], array[1]);
+
+  let maximum = Math.max(array[0], array[1]);
+
+    let result = 0; 
+  
+for (let i = minimum; i <= maximum; i += 1){
+  result += i;
+}
+  return result;
+}
 
 /**
  * rangeOdd()
@@ -25,7 +37,16 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  
+    let sum = 0;
+for(i = 1; i <= max; i += 2){
+sum += i;
+}
+
+return sum;
+
+}
 
 /**
  * rangeEveryOther()

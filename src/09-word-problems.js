@@ -19,7 +19,61 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+
+
+  let discountCalculator = 0;
+  let totalAmount = 0;
+  let ticketPrice = priceInCents;
+// 1000 10 true.
+  if ( age > 10 && age < 65 && (hasMembership ===false)){
+   // console.log(ticketPrice)
+    return ticketPrice;
+  } 
+
+  if (age >= 65 && (hasMembership === true )){
+  
+    discountCalculator = 0.3 * ticketPrice
+     
+    ticketPrice = ticketPrice - discountCalculator
+
+     return ticketPrice;
+   }
+
+    if ( age <= 10 && (hasMembership === true ) ){
+  
+    discountCalculator = 0.3 * ticketPrice
+     
+    ticketPrice = ticketPrice - discountCalculator
+
+     return ticketPrice;
+   }
+    if (age >= 65  ){
+  
+    discountCalculator = 0.1 * ticketPrice
+     
+    ticketPrice = ticketPrice - discountCalculator
+
+     return ticketPrice;
+   }
+    if (age <= 10  ){
+  
+    discountCalculator = 0.1 * ticketPrice
+     
+    ticketPrice = ticketPrice - discountCalculator
+
+     return ticketPrice;
+   } 
+    if (hasMembership = true){
+  
+    discountCalculator = 0.2 * ticketPrice
+     
+    ticketPrice = ticketPrice - discountCalculator
+    return ticketPrice;
+   }
+    
+ 
+}
 
 /**
  * getCartTotal()
@@ -40,7 +94,28 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+ 
+  let totalAmount = 0;
+
+  for (i = 0; i <= products.length; i++){
+
+    let prodQuantity = products[i].quantity;
+
+    let price = products[i].priceInCents;
+
+    if(prodQuantity && price != 0){
+
+      totalAmount = ((prodQuantity * price) / 100)
+    }else {
+      return `cart is empty`;
+    } 
+
+  }
+
+
+  return ` Your total ammount is : $${totalAmount}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +155,19 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+if (address1 != address2){
+return `Addresses are not near each other.`
+} 
+
+if(address1.state === address2.state){
+  return `Same state.`
+}
+
+
+
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +214,12 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+
+
+
+
+}
 
 /**
  * createLineOrder()
