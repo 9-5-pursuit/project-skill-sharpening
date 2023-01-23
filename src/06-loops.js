@@ -28,7 +28,6 @@
   }
   rangeSum(3, 7); //Should output: 25
 
-
 /**
  * rangeOdd()
  * ---------------------
