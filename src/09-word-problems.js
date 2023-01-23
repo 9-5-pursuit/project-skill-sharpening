@@ -19,8 +19,36 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
-
+function applyDiscount(priceInCents, age, hasMembership) {
+  let ageDiscount = 0;
+  let memberDiscount = 0;
+  let totalDue = 0;
+  if (age <= 10 || age >= 65) {
+    ageDiscount = (priceInCents * 0.1);
+    console.log("age is discounted")
+    console.log(ageDiscount);
+  }
+    else {
+      ageDiscount = 0;
+      console.log("no age discount")
+      console.log(ageDiscount);
+    }
+  if (hasMembership === true) {
+    memberDiscount = (priceInCents * 0.20);
+    console.log("member is discounted")
+    console.log(memberDiscount);
+  } 
+    else {
+      memberDiscount = 0;
+      console.log("no member discount")
+      console.log(memberDiscount)
+    }
+    let combinedDiscount = ageDiscount + memberDiscount;
+    totalDue = priceInCents - combinedDiscount;
+return totalDue;
+console.log("the total due is")
+console.log(totalDue);
+  }
 /**
  * getCartTotal()
  * ---------------------
@@ -45,7 +73,7 @@ function getCartTotal(products) {}
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
+  A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
  * 
  * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that describes the relationship between those two addresses.
  * 
