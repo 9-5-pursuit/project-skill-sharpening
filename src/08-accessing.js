@@ -21,6 +21,8 @@
   }
 */
 
+const { createArrayWithTwoElements } = require("./04-arrays")
+
 /**
  * getFirstName()
  * ---------------------
@@ -32,7 +34,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first
+}
 
 /**
  * getLastName()
@@ -45,7 +49,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +64,10 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) 
+{
+  return person.address.street
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +80,9 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length
+}
 
 /**
  * getFirstPhoneNumber()
@@ -87,7 +98,9 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.numbers[0]
+}
 
 /**
  * getLastPhoneNumber()
@@ -103,7 +116,10 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+ let numbers = person.numbers
+  return numbers[numbers.length-1]
+}
 
 /**
  * getFullName()
@@ -116,7 +132,14 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  let firstName = person.names.first;
+  let middleName = person.names.middle;
+  let lastName = person.names.last;
+  let fullName = `${firstName} ${middleName} ${lastName}`
+  return fullName
+
+}
 
 /**
  * getCityAndState()
@@ -132,7 +155,12 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  let city = person.address.city
+  let state = person.address.state
+  let cityState = `${city}, ${state}`
+  return cityState
+}
 
 /**
  * getFullAddress()
@@ -148,7 +176,15 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  let address = person.address.street
+  let city = person.address.city
+  let unit = person.address.unit
+  let state = person.address.state
+  let zipCode = person.address.zip
+  let fullAddress = `${address} ${unit}, ${city}, ${state}, ${zipCode}`
+  return fullAddress
+}
 
 /**
  * getFlatObject()
@@ -171,7 +207,22 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+    
+  let result = {};
+  Object.keys(person).forEach((i) =>{
+    let store = person[i]
+    if(typeof store === 'object' && store != null && !Array.isArray(store)){
+      Object.assign(result, getFlatObject(store))
+    }else{
+      result[i]=store
+    }
+
+  })
+
+  return result;
+}
+
 
 // Do not change the code below.
 module.exports = {
