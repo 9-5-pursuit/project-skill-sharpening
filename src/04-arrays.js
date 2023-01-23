@@ -194,9 +194,6 @@ console.log(removeElementFromFrontOfArray([10, 9, 8])); //
 
 
 
-  
-
-
 /**
  * getMiddleElement()
  * ---------------------
