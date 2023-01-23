@@ -19,7 +19,27 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discount = 0
+  let deductedAmount = 0
+  let reducedPrice = 0
+
+  if(age <= 10 || age >= 65){
+    discount += .10
+  } 
+  if(hasMembership){
+    discount += .20
+  }
+  if(discount > 0){
+    deductedAmount = discount * priceInCents
+    reducedPrice = priceInCents - deductedAmount
+    return reducedPrice
+  } else {
+    return priceInCents
+  }
+
+  
+}
 
 /**
  * getCartTotal()
@@ -40,7 +60,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0
+
+  for (let i = 0; i < products.length; i++) {
+   total += (products[i].priceInCents * products[i].quantity)
+  }
+  return `$${(total/100).toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +107,28 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let st1 = address1.street
+  let st2 = address2.street
+  let c1 = address1.city
+  let c2 = address2.city
+  let s1 = address1.state
+  let s2 = address2.state
+  let z1 = address1.zip
+  let z2 = address2.zip
+  if (st1 === st2 && c1 === c2 && s1 === s2 && z1 === z2){
+    return "Same building."
+  }
+  if (c1 === c2 && s1 === s2 && z1 === z2){
+    return "Same city."
+  }
+  if (s1 === s2){
+    return "Same state."
+  } else if (address1 !== address2){
+return "Addresses are not near each other."
+  }
+
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +175,69 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i = 0; i < assignments.length; i++){
+    let max = assignments[i].score.max
+    let received = assignments[i].score.received
+
+    if(assignments[i].kind === "PASS-FAIL"){
+
+        if(assignments[i].score.received === assignments[i].score.max){
+            assignments[i]["status"]= "PASSED"
+        }else{
+            assignments[i].status = "FAILED"
+        }
+    }
+
+    if(assignments[i].kind === "PERCENTAGE"){
+       
+        let percent = (received/max) * 100 
+      if (percent >= 80){
+        assignments[i].status = `PASSED: ${percent.toFixed(1)}%`
+        
+      } else if(percent < 80){
+        assignments[i].status = `FAILED: ${percent.toFixed(1)}%`
+     }
+    }
+    if(assignments[i].kind !== "PASS-FAIL" && assignments[i].kind !== "PERCENTAGE"){
+      assignments[i].status = `SCORE: ${received}/${max}`
+   }
+  }
+return assignments
+}
+//   for (let i = 0; i < assignments.length; i++) {
+//     let max = assignments[i].score.max
+//     let received = assignments[i].score.received
+
+//       if (assignments[i].kind === "PASS-FAIL"){
+
+//         if (assignments[i].score.received === assignments[i].score.max) {
+//             assignments[i]["status"] = "PASSED"
+//            }else{
+//             assignments[i].status = "FAILED"
+//         }
+//       }
+
+
+//       if(assignments[i].kind === "PERCENTAGE"){
+        
+//           let percent = (received/max) * 100
+//           if (percent >= 80) {
+//             assignments[i].status = `PASSED: ${percent.toFixed(1)}%`
+
+//           } else if (percent < 80) {
+//             assignments[i].status = `FAILED: ${percent.toFixed(1)}%`
+//           } 
+//       }
+
+
+//       if (assignments.kind !== "PASS-FAIL" && assignments[i].kind !== "PERCENTAGE") {
+//         assignments[i].status = `SCORE: ${received}/${max}`
+//       }
+
+//     }
+//   return assignments
+// }
 
 /**
  * createLineOrder()
@@ -152,7 +262,28 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let arr = []
+  let membership = []
+  let notMember = []
+
+  for (let i = 0; i < people.length; i++) {
+    member = people[i].hasMembership
+   if(member === true){
+      membership.push(people[i].name)
+   } else {
+    notMember.push(people[i].name)
+   }
+
+  }
+  arr = membership.concat(notMember)
+  return arr
+}
+
+
+
+
+
 
 module.exports = {
   applyDiscount,
