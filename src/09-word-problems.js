@@ -19,7 +19,25 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+
+  if ((hasMembership) && (age <= 10 || age >=65)) {
+    priceInCents = priceInCents * .70;
+    return priceInCents;
+
+  } if (hasMembership) {
+    priceInCents = priceInCents * .80;
+    return priceInCents;
+  
+  } if (age <= 10 || age >=65) {
+    priceInCents = priceInCents * .90;
+    return priceInCents;
+    
+  } else {
+    return priceInCents;
+  }
+    
+}
 
 /**
  * getCartTotal()
@@ -40,7 +58,13 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products, priceInCents, quantity) {
+  let total = 0;
+  for (let i = 0; i < products.length; i++) {
+     total += products[i].priceInCents * products[i].quantity;
+}
+  return `$${(total/100).toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +104,17 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return "Same building.";
+  } if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return "Same city."
+  } if (address1.state === address2.state) {
+    return "Same state."
+  } else {
+    return "Addresses are not near each other."
+  }
+}
 
 /**
  * gradeAssignments()
@@ -152,7 +186,21 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people, name, hasMembership) {
+  let line = [];
+  for (let i= 0; i < people.length; i++) {
+    if (people[i].hasMembership === true) {
+      line.push(people[i].name);
+      //console.log(line);
+      
+    } else if (people[i].hasMembership === false) {
+      line.push(people[i].name);
+      
+    }
+  }
+
+  return line;
+}
 
 module.exports = {
   applyDiscount,
