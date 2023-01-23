@@ -165,7 +165,28 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i = 0; i < assignments.length; i++) {
+    let percentage;
+    if (assignments[i].kind === "PASS-FAIL") {
+      if (assignments[i].score.received === assignments[i].score.max) {
+        assignments[i].status = "PASSED";
+      } else {
+        assignments[i].status = "FAILED";
+      }
+    } else if (assignments[i].kind === "PERCENTAGE") {
+      percentage = (assignments[i].score.received / assignments[i].score.max) * 100;
+      if (percentage >= 80) {
+        assignments[i].status = `PASSED: ${percentage.toFixed(1)}%`;
+      } else {
+        assignments[i].status = `FAILED: ${percentage.toFixed(1)}%`;
+      }
+    } else {
+      assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`;
+    }
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -190,7 +211,20 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let newArray = [];
+    for (let i = 0; i < people.length; i++) {
+      if (people[i].hasMembership) {
+        newArray.push(people[i].name);
+      }
+    }
+    for (let i = 0; i < people.length; i++) {
+      if (people[i].hasMembership === false) {
+        newArray.push(people[i].name);
+      }
+    }
+    return newArray;
+}
 
 module.exports = {
   applyDiscount,
