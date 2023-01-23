@@ -113,7 +113,7 @@ function checkIfCharacterIsInString(text, character) {
   console.log(checkIfCharacterIsInString("hello there", "a")); // false
   
 
-  
+
 /**
  * isEven()
  * ---------------------
@@ -138,7 +138,7 @@ console.log(isEven(10));
 console.log(isEven(11));
 
 
-  //if the num is divisible by 2, the function returns "true"
+//if the num is divisible by 2, the function returns "true"
 
 
 /**
