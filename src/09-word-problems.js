@@ -41,7 +41,6 @@ function applyDiscount(priceInCents, age, hasMembership) {
   applyDiscount(1000, 66, false); //> 900 
   applyDiscount(1000, 9, true); //> 700
 
-
 /**
  * getCartTotal()
  * ---------------------
@@ -86,7 +85,6 @@ function getCartTotal(products) {
    ]; 
 
   getCartTotal(cart); //> "$30.00"
-
 
 
 /**
