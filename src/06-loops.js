@@ -11,7 +11,12 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let mySum = 0;
+  for (let i = min; i <= max; i++) 
+    mySum += i;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+return mySum;
+}
 
 /**
  * rangeOdd()
@@ -25,7 +30,14 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let myArray = []
+  for (let i = max; i >= min; i--) {
+    if (i % 2 !== 0) 
+      myArray.push(i) }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+return myArray;
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +51,13 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let otherArray = [];  
+  for (let num = min; num <= max; num+=2) {
+    otherArray.push(num)
+  }
+    return otherArray;
+} 
 
 /**
  * containsWhileLoop()
@@ -61,7 +79,16 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let num = 0;
+  while (num < array.length) {
+     if (array[num] === target) {
+      return true;
+     }
+     num += 1;
+  }
+  return false;
+}
 
 /**
  * containsForLoop()
@@ -83,7 +110,16 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (num = 0; num < array.length; num += 1) {
+     if (array[num] === target) {
+      return true;
+     }
+     ;
+  }
+  return false;
+}
+
 
 /**
  * targetCount()
@@ -97,7 +133,15 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let targetOcc = 0;
+  for (let num = 0; num < array.length; num++) {
+    if (array[num] === target) {
+    targetOcc++
+    }
+  }
+return targetOcc
+}
 
 /**
  * firstIndexFound()
@@ -117,7 +161,14 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for (let num = 0; num < array.length; num++) {
+    if (array[num] === target) {
+      return num;
+    }
+  }
+  return -1
+}
 
 /**
  * lastIndexFound()
@@ -137,7 +188,14 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for (let num = array.length-1; num >= 0; num--) {
+    if (array[num] === target) {
+      return num;
+    }
+  }
+  return -1
+}
 
 /**
  * timesIndex()
@@ -151,7 +209,17 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let myArray = [];
+    //new array
+    let myNum = 0;
+    for (let i = 0; i < array.length; i++) {
+      myNum = array[i] * i
+      myArray.push(myNum)
+    }
+  
+  return myArray
+}
 
 /**
  * cumulativeSum()
@@ -165,7 +233,17 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let myArray = [];
+  let mySum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    mySum += array[i]
+    myArray.push(mySum)
+  
+  }
+return myArray;
+}
 
 // Do not change anything below this line.
 module.exports = {
@@ -180,3 +258,4 @@ module.exports = {
   timesIndex,
   cumulativeSum,
 };
+
