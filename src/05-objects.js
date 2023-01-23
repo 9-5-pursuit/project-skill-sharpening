@@ -25,6 +25,7 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
+return object[val]
 }
 
 /**
@@ -38,7 +39,9 @@ function createObjectWithValue(val) {
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  return {[`${key}`]: "any value"}
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -52,7 +55,9 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  return {[`${key}`]: val}
+}
 
 /**
  * getNameFromObject()
@@ -97,7 +102,8 @@ function getAgeFromObject(object) {
  *  //> { left: true, key: false }
  */
 function addValueToObject(object, val) {
-
+object.key1=val
+return object
 }
 
 /**
@@ -112,7 +118,10 @@ function addValueToObject(object, val) {
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  object[`${key}`] = "any value"
+  return object
+}
 
 /**
  * addKeyValuePairToObject()
@@ -127,7 +136,10 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  object[`${key}`] = val
+  return object
+}
 
 /**
  * deleteKeyFromObject()
@@ -142,8 +154,8 @@ function addKeyValuePairToObject(object, key, val) {}
  *  //> { right: false }
  */
 function deleteKeyFromObject(object, key) {
-  delete object.key
-  return object.key
+  delete object[`${key}`]
+  return object
 }
 
 // Do not change any code below this line.

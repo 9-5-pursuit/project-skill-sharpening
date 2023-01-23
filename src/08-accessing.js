@@ -78,6 +78,7 @@ function getAddressStreet(person) {
  *  //> 2
  */
 function getCountOfPhoneNumbers(person) {
+  return person.numbers.length
 }
 
 /**
@@ -114,8 +115,7 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  let number = person.numbers[1]
-  return number
+  return person.number.[person.numbers.length - 1]
 }
 
 /**
@@ -191,8 +191,9 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  let newPerson = person.flat(0,1)
-  return newPerson
+  // let newPerson = person.flat(0,1)
+  // return newPerson
+return {...person.name, ...person.address, numbers:person.numbers}
 }
 
 // Do not change the code below.
