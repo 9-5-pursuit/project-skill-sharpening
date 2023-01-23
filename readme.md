@@ -6,7 +6,7 @@ The goal of this project is to give you repeated practice.
 
 There are 186 unit tests that need to pass. Each passing test will be worth 1 point.
 
-A minium of 129 points must be attained in order to pass this project.
+A minimum of 129 points must be attained in order to pass this project.
 
 There is no partial credit for the tests.
 
@@ -62,7 +62,7 @@ npm test loops
 
 ### Run tests individually
 
-_After choosing a specific file to run,_ you can also specific which test you want to run, specifically. Add `.only` after either `test` or `describe` for the specific test you'd like to run.
+_After choosing a specific file to run,_ you can also specify which test you want to run, specifically. Add `.only` after either `test` or `describe` for the specific test you'd like to run.
 
 ```js
 test.only("should return an array of everyone's name who is in the line, in order", () => {
