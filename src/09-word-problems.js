@@ -19,7 +19,19 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+let discount = 1;
+let cost = priceInCents;
+if (age <= 10 || age >=65){
+  discount -= .10
+}  if 
+  (hasMembership){
+    discount -= .20
+  }
+return cost * discount
+  }
+
+
 
 /**
  * getCartTotal()
@@ -40,7 +52,9 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  
+}
 
 /**
  * compareLocations()
