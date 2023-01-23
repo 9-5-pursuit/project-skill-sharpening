@@ -167,6 +167,7 @@ console.log(addElementToFrontOfArray([10], 9)); // [9, 10]
 //9 is added to the front of the original array
 
 
+
 /**
  * removeElementFromFrontOfArray()
  * ---------------------
