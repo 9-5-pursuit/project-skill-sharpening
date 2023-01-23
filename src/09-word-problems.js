@@ -19,7 +19,21 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  if (age >= 65 && hasMembership === true) {
+    return priceInCents * .70
+  } else if ( age >= 65 && hasMembership === false) {
+    return priceInCents * .90
+  } else if ( age <= 10 && hasMembership === true) {
+    return priceInCents * .70
+  } else if (age <= 10 && hasMembership === false) {
+    return priceInCents * .90
+  } else if (hasMembership === true) {
+    return priceInCents * .80
+  } else {
+    return priceInCents
+  }
+}
 
 /**
  * getCartTotal()
@@ -40,7 +54,9 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+products.quantity * products.priceInCents
+}
 
 /**
  * compareLocations()
@@ -80,7 +96,13 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1 === address2) {
+    return "Same building."
+  } else if (address1.city && address1.state && address1.zip === address2.city && address2.state && address2.zip) {
+    return "Same city."
+  }
+}
 
 /**
  * gradeAssignments()
