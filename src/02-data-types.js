@@ -1,3 +1,5 @@
+const { TestWatcher } = require("jest");
+
 /**
  * getLengthOfString()
  * ---------------------
@@ -9,7 +11,9 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  return str.length;
+}
 
 /**
  * convertToNumber()
@@ -22,7 +26,9 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  return +val
+}
 
 /**
  * convertToString()
@@ -36,7 +42,11 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  return String(val);
+  
+//Notes: Other ways to solve 
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +59,12 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  let textUpperCase = text.toUpperCase();
+  return textUpperCase;
+
+  //Notes: Other ways to solve: * return text.toUpperCase();
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +77,12 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  let textLowerCase = text.toLowerCase();
+  return textLowerCase;
+
+  //Notes: Other ways to solve: * return text.toLowerCase();
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +99,9 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  return text.includes(character);
+}
 
 /**
  * isEven()
@@ -95,8 +117,11 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+ return num === 0 || !!(num && !(num%2));
 
+ //Note: Other ways to solve: * return num % 2 === 0;
+}
 /**
  * isOdd()
  * ---------------------
@@ -111,7 +136,11 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  return isEven(num + 1);
+
+  //Note: Other ways to solve: * return num % 2 !== 0; *
+}
 
 /**
  * isTruthy()
@@ -127,7 +156,14 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  if(val) {
+    return true;
+  } else {
+    return false;
+  } 
+}
+//Notes: Other ways to solve: *
 
 /**
  * isFalsy()
@@ -143,7 +179,13 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  if (val) {
+    return false;
+  } else { 
+    return true;
+  }
+}
 
 // Do not change the code below.
 module.exports = {
