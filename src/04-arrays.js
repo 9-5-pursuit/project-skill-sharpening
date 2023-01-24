@@ -10,7 +10,10 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  let result = [];
+  return result;
+}
 
 /**
  * createArrayWithTwoElements()
@@ -24,7 +27,10 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  let result = [a, b];
+  return result;
+}
 
 /**
  * getArrayLength()
@@ -37,7 +43,10 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+  let result = array.length;
+  return result;
+}
 
 /**
  * getFirstElementOfArray()
@@ -51,7 +60,10 @@ function getArrayLength(array) {}
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) {}
+function getFirstElementOfArray(array) {
+  let result = array.shift();
+  return result;
+}
 
 /**
  * getLastElementOfArray()
@@ -65,7 +77,10 @@ function getFirstElementOfArray(array) {}
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+  let result = array.pop();
+  return result;
+}
 
 /**
  * addElementToEndOfArray()
@@ -79,7 +94,11 @@ function getLastElementOfArray(array) {}
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {}
+function addElementToEndOfArray(array, element) {
+  array.push(element);
+   return array;
+
+}
 
 /**
  * removeElementFromEndOfArray()
@@ -92,7 +111,10 @@ function addElementToEndOfArray(array, element) {}
  *  removeElementFromEndOfArray([ 10, 9, 8 ]);
  *  //> 8
  */
-function removeElementFromEndOfArray(array) {}
+function removeElementFromEndOfArray(array) {
+  let removedElement = array.pop();
+  return removedElement;
+}
 
 /**
  * addElementToFrontOfArray()
@@ -106,7 +128,10 @@ function removeElementFromEndOfArray(array) {}
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+function addElementToFrontOfArray(array, element) {
+  array.unshift(element);
+  return array;
+}
 
 /**
  * removeElementFromFrontOfArray()
@@ -119,7 +144,10 @@ function addElementToFrontOfArray(array, element) {}
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray(array) {}
+function removeElementFromFrontOfArray(array) {
+  let removedElement = array.shift();
+  return removedElement;
+}
 
 /**
  * getMiddleElement()
@@ -135,7 +163,17 @@ function removeElementFromFrontOfArray(array) {}
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement(array) {
+  let result;
+  if (array.length <= 1) {
+    result = array.shift()
+  } if (array.length > 1) {
+  for (i = 1; i < array.length; i += 2) {
+    result = array[i];
+  }
+}
+  return result;
+}
 
 // Do not change any code below this line.
 module.exports = {

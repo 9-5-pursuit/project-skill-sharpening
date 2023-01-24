@@ -14,7 +14,15 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  let result;
+  if (a === b) {
+    result = true;
+  } else {
+    result = false
+  }
+  return result;
+}
 
 /**
  * findLarger()
@@ -28,7 +36,14 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  if (a > b) {
+    return a;
+  }
+  if (b > a) {
+    return b;
+  }
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +60,20 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  let result;
+  if (a > b) {
+    result = a;
+    }
+  if (b > a) {
+    result = b;
+    } 
+  if (a === b) {
+    result = "tie";
+  }
+    return result;
+  }
+
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +93,19 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  let result;
+  if (a === 0) {
+    result ="Zero";
+  }
+  if (a > 0) {
+    result = "Positive";
+  } 
+  if (a < 0) {
+    result = "Negative";
+  }
+  return result;
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +126,19 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  let result = "Hello World";
+  if (language === "english") {
+    result = "Hello World";
+  }
+  if (language === "spanish") {
+    result = "Hola Mundo";
+  }
+  if (language === "german") {
+    result = "Hallo Welt";
+  }
+  return result;
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,44 +161,88 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+ function aroundTheWorldGreetingWithSwitch(language) {
+  String result;
+  switch (language) {
+    case spanish: 
+      result = "Hola Mundo";
+                  break;
+    case german:
+      result = "Hallo Welt";
+                  break;
+    default:
+      "Hello World";
+                  break;
+  return result;
+}
+ }
+ 
 
 /**
- * calculateLetterGrade()
- * ---------------------
- * Takes in a number and returns the letter grade corresponding to that number. Letter grades consist of "A", "B", "C", "D", or "F".
- *
- * SCORING: 90 and above is an A
- *          80 and above is a B
- *          70 and above is a C
- *          60 and above is a D
- *          Anything lower than 60 is an F
- * @param {number} grade
- * @returns {string}
- *
- * EXAMPLE:
- *  calculateLetterGrade(99);
- *  //> "A"
- */
-function calculateLetterGrade(grade) {}
+//  * calculateLetterGrade()
+//  * ---------------------
+//  * Takes in a number and returns the letter grade corresponding to that number. Letter grades consist of "A", "B", "C", "D", or "F".
+//  *
+//  * SCORING: 90 and above is an A
+//  *          80 and above is a B
+//  *          70 and above is a C
+//  *  
 
-/**
- * animalCounts()
- * ---------------------
- * Returns the count of animals, properly pluralizing the animal if there is more than one.
- * The animal is guaranteed to be one you can pluralize by adding `s`. (NO geese, fish, deer, oxen, etc.)
- * @param {string} animal
- * @param {number} numberOfAnimals
- * @returns {string}
- *
- * EXAMPLE:
- *  animalCounts("dog", 2);
- *  //> "2 dogs"
- *
- *  animalCounts("pig", 1);
- *  //> "1 pig"
- */
-function animalCounts(animal, numberOfAnimals) {}
+// /**
+//  *         60 and above is a D
+//  *          Anything lower than 60 is an F
+//  * @param {number} grade
+//  * @returns {string}
+//  *
+//  * EXAMPLE:
+//  *  calculateLetterGrade(99);
+//  *  //> "A"
+//  */
+function calculateLetterGrade(grade) {
+  let result;
+  if (grade >= 90) {
+    result = "A";
+  }
+  if (grade >= 80 && grade < 90) {
+    result = "B";
+  }
+  if (grade >= 70 && grade < 90 && grade < 80) {
+    result = "C";
+  }
+  if (grade >= 60 && grade < 90 && grade < 80 && grade < 70) {
+    result = "D";
+  }
+  if (grade < 60) {
+    result = "F"
+  }
+  return result;
+}
+
+//  * animalCounts()
+//  * ---------------------
+//  * Returns the count of animals, properly pluralizing the animal if there is more than one.
+//  * The animal is guaranteed to be one you can pluralize by adding `s`. (NO geese, fish, deer, oxen, etc.)
+//  * @param {string} animal
+//  * @param {number} numberOfAnimals
+//  * @returns {string}
+//  *
+//  * EXAMPLE:
+//  *  animalCounts("dog", 2);
+//  *  //> "2 dogs"
+//  *
+//  *  animalCounts("pig", 1);
+//  *  //> "1 pig"
+//  */
+function animalCounts(animal, numberOfAnimals) {
+  let result; 
+  if (numberOfAnimals >= 2) {
+    result = `${numberOfAnimals} ${animal}s`;
+  }
+  if (numberOfAnimals < 2) {
+    result = `${numberOfAnimals} ${animal}`;
+  }
+  return result;
+}
 
 /**
  * evenOrOdd()
@@ -163,7 +259,16 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  let result;
+  if (a % 2 === 0) {
+    result = "Even";
+  }
+  if (a % 2 === 1 || a % 2 === -1) {
+    result = "Odd";
+  }
+  return result;
+}
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +284,11 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  let result;
+  result = a % 2 === 1 || a % 2 === -1 ? "Odd": "Even";
+  return result;
+}
 
 // Do not change any code below this line.
 module.exports = {

@@ -69,7 +69,7 @@ describe("containsForLoop", () => {
     expect(containsForLoop([5, 2, 3, 5, 9], 6)).toBe(false);
     expect(containsForLoop(["cat", "dog", "bird"], "whale")).toBe(false);
   });
-
+  
   test("is written with a for loop", () => {
     const funcString = containsForLoop.toString();
     expect(funcString.includes("while")).toBe(false);
