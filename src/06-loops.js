@@ -91,7 +91,7 @@ function rangeEveryOther(min, max) {
  */
 function containsWhileLoop(array, target) {
   let i = 0;
-  while(i<=array.length)
+  while(i<array.length)
   {
     if (array[i] === target)
     {
