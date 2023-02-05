@@ -48,7 +48,7 @@ function getFirstName(person) {
  *  //> "Rojas"
  */
 function getLastName(person) {
-  return person.name.last
+  return person.names[`last`]
 }
 
 /**
@@ -129,8 +129,7 @@ function getLastPhoneNumber(person) {
  *  //> "Rachel Eleanor Rojas"
  */
 function getFullName(person) {
-  person.names.join(' ')
-  return person
+  return `${person.names.first} ${person.names.middle} ${person.names.last}`
 }
 
 /**
@@ -191,9 +190,28 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  first: person.names.first, middle: person.names.middle, last: person.names.last, street:
-    person.address.street, unit: person.address.unit, city: person.address.city, state: person.address.state,
-    zip: person.address.zip, numbers: person.numbers
+  let first = person.names.first
+let middle = person.names.middle
+let last = person.names.last
+let street = person.address.street
+let unit = person.address.unit
+let city = person.address.city
+let state = person.address.state
+let zip = person.address.zip
+let numbers = person.numbers
+
+let newObj = {}
+newObj.first = first
+newObj.middle = middle
+newObj.last = last
+newObj.street = street
+newObj.unit = unit
+newObj.city = city
+newObj.state = state
+newObj.zip = zip
+newObj.numbers = numbers
+
+return newObj
 }
 
 // Do not change the code below.

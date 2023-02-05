@@ -115,12 +115,11 @@ function containsWhileLoop(array, target) {
  *  //> false
  */
 function containsForLoop(array, target) {
-  for (var i = 0; i<array.length; i++) {
-    if (array[i]==target) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
       return true
-  }
-  return false
-}
+    }
+  } return false
 }
 
 /**
@@ -162,12 +161,13 @@ function targetCount(array, target) {
  *  //> -1
  */
 function firstIndexFound(array, target) {
-  for (var i in array) { 
+  firstIndex = 0
+  for (let i = 0; i < array.length; i++) {
     if (array[i] === target) {
-      return parseInt(i);
-     } 
-     return -1
-}
+      firstIndex = i
+      return firstIndex
+    }
+  } return -1
 }
 
 /**

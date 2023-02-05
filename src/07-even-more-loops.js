@@ -180,7 +180,15 @@ function findEqual(array, selected) {
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let numArray = []
+  array.forEach((element) => {
+    if (!numArray.includes(element)) {
+      numArray.push(element)
+    }
+  });
+  return numArray
+}
 
 // Do not change any code below this line.
 module.exports = {

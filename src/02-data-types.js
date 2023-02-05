@@ -90,7 +90,7 @@ function convertToWhisperText(text) {
  *  //> false
  */
 function checkIfCharacterIsInString(text, character) {
-  let bool = text.includes(character)
+  return text.includes(character)
 }
 
 /**

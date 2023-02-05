@@ -20,22 +20,14 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-    if (age <= 10 || age >= 65) {
-      if (hasMembership) {
-        priceInCents *= .70; 
-        return priceInCents
-      } else { 
-        priceInCents *= .90; 
-        return priceInCents
-      } else { 
-        if (hasMembership) {
-        priceInCents *= .80; 
-        return priceInCents
-      } else {
-        return priceInCents
-    }
-}
-}
+  let ageMembership = (age <= 10 || age >= 65)
+  if (hasMembership && (ageMembership)) {
+    return priceInCents * .70
+  } else if (hasMembership) {
+    return priceInCents * .80
+  } else if (ageMembership) {
+    return priceInCents * .90
+  } else return priceInCents
 }
 /**
  * getCartTotal()
@@ -104,15 +96,13 @@ function getCartTotal(products) {
     //> "Same city."
  */
 function compareLocations(address1, address2) {
-    if (JSON.stringify(address1) === JSON.stringify(address2)) {
-      return "Same building.";
-    } else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
-      return "Same city.";
-    } else if (address1.state==address2.state) {
-      return "Same state.";
-    } else {
-      return `Error: ${address1} and ${address2} are not close by. Why not try entering two locations within the same city and state?`;
-  }
+  if ((address1.street === address2.street) && (address1.city === address2.city) && (address1.state === address2.state) && (address1.zip === address2.zip)){
+    return "Same building."
+  } else if ((address1.city === address2.city) && (address1.state === address2.state) && (address1.zip === address2.zip)){
+    return "Same city."
+  } else if (address1.state === address2.state){
+    return "Same state."
+  } else return "Addresses are not near each other."
 }
 
 /**
@@ -161,29 +151,20 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
- for (var a of assignments) {
-    if (a.kind === 'PASS-FAIL') {
-      if (a.score.received === a.score.max) {
-        return a.status = 'PASSED'
-      } else {
-        return a.status = 'FAILED'
-    }
-    if (a.kind === 'PERCENTAGE') {
-      if (a.score.received/a.score.max>=.80) {
-        return a.status = `PASSED: ${((a.score.received/
-        a.score.max)*100).toFixed(1)}%`
-      } else { 
-        return a.status = `FAILED: ${((a.score.received/
-      a.score.max)*100).toFixed(1)}%`
-    }
-    if (a.kind === 'ESSAY') {
-      return a.status = `SCORE: ${a.score.received}/${a.score.max}`
-    }
+  for (let i = 0; i < assignments.length; i++){
+    if ( assignments[i].kind === 'PASS-FAIL'){
+      if (assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = "PASSED"
+      } else if (assignments[i].score.received !== assignments[i].score.max){
+        assignments[i].status = "FAILED"
+      }
+    } else if (assignments[i].kind === 'PERCENTAGE'){
+      if ((assignments[i].score.received / assignments[i].score.max) >= .80){
+        assignments[i].status = `PASSED: ${((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)}%`
+      } else assignments[i].status = `FAILED: ${((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)}%`
+    } else assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
   }
   return assignments
-
-}
- }
 }
 
 /**
@@ -210,16 +191,18 @@ function gradeAssignments(assignments) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-    let arr = []
-    let arr2 = []
-    for (var p of people) {
-      if (p.hasMembership) {
-        return arr.push(p.name);
-      } else { 
-        return arr2.push(p.name)
-    }
-    return arr.concat(arr2)
-}
+  membersArray = [ ]
+
+  for (let i = 0; i < people.length; i++){
+    if (people[i].hasMembership === true){
+       membersArray.push(people[i].name)
+       } 
+   }
+  for (let j = 0; j < people.length; j++){
+     if (people[j].hasMembership === false){
+       membersArray.push(people[j].name)
+     }
+   } return membersArray
 }
 
 module.exports = {
