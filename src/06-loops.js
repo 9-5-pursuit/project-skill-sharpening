@@ -193,13 +193,13 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  for (let i = array.lengh-1; i >= 0; i--) {
-    if (array[i] === target) {
-    return i
-    }
+  // for (array[i] of array) {
+  //   if (array[i] === target)
+  //   return []
+array.findIndex(target)
+console.log(array.indexOf(`${target}`))
+
   }
-  return -1
-}
 
 /**
  * timesIndex()

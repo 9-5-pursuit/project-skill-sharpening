@@ -15,6 +15,7 @@
  *  //> false
  */
 function isEqual(a, b) {
+  // if param a strictly equals param b return true else fale
   if (a === b) {
     return true
   } else {
@@ -60,6 +61,7 @@ function findLargerOrTie(a, b) {
     return Math.max(a,b)
   }
 }
+
 
 /**
  * positiveNegativeOrZero()
@@ -266,4 +268,4 @@ module.exports = {
   animalCounts,
   evenOrOdd,
   evenOrOddWithTernary,
-};
+}

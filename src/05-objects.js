@@ -25,7 +25,8 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-return object[val]
+return {object: val}
+// curly brackets creates and object and the input of the objects is val
 }
 
 /**

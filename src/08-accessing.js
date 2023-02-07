@@ -115,8 +115,11 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.number.[person.numbers.length - 1]
+  if (person.numbers >= 1) {
+  console.log(numbers.length-1)
+  }
 }
+
 
 /**
  * getFullName()

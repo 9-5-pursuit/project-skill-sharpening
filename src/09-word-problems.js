@@ -153,7 +153,13 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i = 0< assignments.length; i++)  {
+    const element = assignments[i];  } 
+    if (element.kind === "PASS-FAIL" ) {
+      element.score.received === element.score.max
+    }
+}
 
 /**
  * createLineOrder()
