@@ -37,7 +37,8 @@ function findLarger(a, b) {
     return b;
   }
 }
-
+// return a > b ? a : b; // => ternary ifstatement 
+// return math.max(a,b) // => built in operator 
 /**
  * findLargerOrTie()
  * ---------------------
@@ -63,6 +64,9 @@ function findLargerOrTie(a, b) {
   }
 }
 
+// if (a === b) return "tie" // if its a single line if statement you dont need curly braces.
+// math.max(a, b)
+//
 /**
  * positiveNegativeOrZero()
  * ---------------------
@@ -90,6 +94,14 @@ function positiveNegativeOrZero(a) {
       return 'Zero';
      }
 }
+
+
+
+
+// if (a === 0) return 'zero'
+// if (a < 0) {d
+
+//}
 /**
  * aroundTheWorldGreeting()
  * ---------------------
@@ -119,7 +131,11 @@ function aroundTheWorldGreeting(language) {
  }       else {
           return 'Hello World';
  }
-  }
+}
+// if (language === 'spanish') return 'Hola Mundo'
+// if (language === 'german') return 'Hallo Welt'
+// return 'Hello World'
+  
 
 
 /**
@@ -209,8 +225,8 @@ if (grade >= 90){
  *  //> "1 pig"
  */
 function animalCounts(animal, numberOfAnimals) {
- if (animal > 1){
-  return `${numberOfAnimals} ${animal}'s`
+ if (numberOfAnimals > 1){
+  return `${numberOfAnimals} ${animal}s`
  }else {
  return `${numberOfAnimals} ${animal}`
 }
@@ -232,16 +248,8 @@ function animalCounts(animal, numberOfAnimals) {
  *  //> "Even"
  */
 function evenOrOdd(a) {
-  if (a % 2 === 1) {
-    return 'Odd'
-  } else if (a % 2 === 0) {
-    return 'Even'
-  } else {
-    return 'no number provided'
-  }
-  }
-
-
+  return a % 2 === 0 ? 'Even' : 'Odd';
+}
 /**
  * evenOrOddWithTernary()
  * ---------------------
@@ -257,11 +265,9 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-  return a % 2 === 0 ? 'Even'
-        : a % 2 === 1 ? 'Odd'
-        : "no number provided"
-
+  return a % 2 === 0 ? 'Even': 'Odd';
 }
+
 
 // Do not change any code below this line.
 module.exports = {

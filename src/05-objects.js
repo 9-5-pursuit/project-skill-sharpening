@@ -26,7 +26,7 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-  let obj = {'whater': val}
+  let obj = {something : val}
    
 
   return obj
@@ -46,7 +46,8 @@ function createObjectWithValue(val) {
 function createObjectWithKey(key) {
   let obj = {}
   obj[key] = 'val'
-  
+  // return { [`${key}`]: 'some value'}
+  // 
 
   
   return obj

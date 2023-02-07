@@ -125,7 +125,7 @@ function averageThree(a, b, c) {
  *  //> false
  */
 function compareTypes(a, b) {
-  return typeof a !== b 
+  return typeof a === typeof b 
 }
 
 /**
@@ -146,7 +146,7 @@ function compareTypes(a, b) {
  *  //> -50
  */
 function flipSign(a) {
-  return a * -1
+  return a * -1 // => a * -1; a = 5; 5 * -1 = -5; -5 * -1 = 5
 }
 
 /**
@@ -170,7 +170,7 @@ function flipSign(a) {
 function joinStringsWithSpaces(a, b, c, d, e) {
     let string = a + " " + b + " " + c + " " + d +" " + e;
     return string
-}
+}// `${a} ${b} ${c} ${d }${e}`;
 
 /**
  * getFirstAndLastCharacter()
@@ -188,10 +188,11 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
- let firstAndLast = a
-   let string = firstAndLast.slice(1, -1);
-  return string
+ 
+  return `${a[0]}${a[a.length -1]}`
   }
+
+  // return `
 
 // Do not change the code below.
 module.exports = {

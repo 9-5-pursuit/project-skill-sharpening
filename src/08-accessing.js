@@ -153,8 +153,7 @@ function getFullName(person) {
  *  //> "Staten Island, NY"
  */
 function getCityAndState(person) {
-  let cityAndState = person.names.address
-  let newArr = cityAndState.splic
+  return `${person.address.city}, ${person.address.state}`
   
 }
 
@@ -205,14 +204,18 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  let newObj = person.names
-  let newObj2 = person.address;
-  let flatObj = {...newObj, ...newObj2};
-  return flatObj
-  
-
-
-
+  let flattened = {
+    first: person.names.first,
+    middle: person.name.middle,
+    last: person.names.last,
+    street: person.address.street,
+    unit: person.address.unit,
+    city: person.address.city,
+    state: person.address.state,
+    zip: person.address.zip,
+    number: person.address.numbers
+  }
+  return flattened
 }
 
 // Do not change the code below.

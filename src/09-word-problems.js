@@ -20,7 +20,7 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-  if (hasMembership ==='false' && age <= 0) {
+  if (hasMembership ===null && age <= 0) {
    return 'does not meet requirements'
   } else if (age <= 10 || age >= 65){
      return priceInCents - (priceInCents * .10)
@@ -54,7 +54,15 @@ function applyDiscount(priceInCents, age, hasMembership) {
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+ {function getCartTotal(products) {
+  let total = 0;
+
+  for (let product of products) {
+    total += product.priceInCents * product.quantity;
+  }
+
+  return `$${(total / 100).toFixed(2)}`;
+}}
 
 /**
  * compareLocations()
@@ -94,7 +102,20 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+    // * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
+    if (JSON.stringify(address1) === JSON.stringify(address2)) {
+      return "Same building.";
+    }
+    // * - If the city, state, and zip are the same, return the string "Same city."
+    if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+      return "Same city.";
+    }
+    if (address1.state === address2.state) {
+      return "Same state.";
+    }
+    return "Addresses are not near each other.";
+  }
 
 /**
  * gradeAssignments()
@@ -141,7 +162,29 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+ function gradeAssignments(assignments) {
+    for (let assignment of assignments) {
+      let score = assignment.score;
+      switch(assignment.kind) {
+        case "PASS-FAIL":
+          score.received === score.max
+            ? assignment.status = "PASSED"
+            : assignment.status = "FAILED"
+          break;
+        case "PERCENTAGE":
+          let grade = score.received / score.max;
+          grade >= 0.8
+            ? assignment.status = `PASSED: ${(grade * 100).toFixed(1)}%`
+            : assignment.status = `FAILED: ${(grade * 100).toFixed(1)}%`
+          break;
+        default:
+          assignment.status = `SCORE: ${score.received}/${score.max}`
+      }
+    }
+  
+    return assignments;
+  
+}
 
 /**
  * createLineOrder()

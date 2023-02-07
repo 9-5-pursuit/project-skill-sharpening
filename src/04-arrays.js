@@ -13,7 +13,7 @@
 function createEmptyArray() {
   let arr = []
   return arr 
-
+  // also => return  Array();
 }
 
 /**
@@ -33,6 +33,7 @@ function createArrayWithTwoElements(a, b) {
       arr.push(a, b);
       return arr
 }
+// return [a, b];
 
 /**
  * getArrayLength()
@@ -81,6 +82,8 @@ function getLastElementOfArray(array) {
   return array.pop()
 }
 
+// return array[array.length -1] using bracket notation
+
 /**
  * addElementToEndOfArray()
  * ---------------------
@@ -94,8 +97,8 @@ function getLastElementOfArray(array) {
  *  //> [ 10, 9 ]
  */
 function addElementToEndOfArray(array, element) {
-  return array.push(element);
-  
+  array.push(element);
+  return array;
 }
 
 /**
@@ -111,7 +114,7 @@ function addElementToEndOfArray(array, element) {
  */
 function removeElementFromEndOfArray(array) {
   let removedElement = array.pop();
-   return removedElement 
+   return removedElement
 }
 
 /**
@@ -127,9 +130,8 @@ function removeElementFromEndOfArray(array) {
  *  //> [ 9, 10 ]
  */
 function addElementToFrontOfArray(array, element) {
-  let newArr = array
-  newArr.push(element);
-  return newArr
+  array.unshift(element)
+  return array
 }
 
 /**
@@ -162,7 +164,9 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
-  return array[1]
+  let middleItem = Math.floor(array.length / 2);
+  // 3 / 2 => 1.5
+  return array[middleItem]
 }
 
 // Do not change any code below this line.

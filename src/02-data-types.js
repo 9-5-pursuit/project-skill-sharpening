@@ -26,6 +26,7 @@ function getLengthOfString(str) {
  */
 function convertToNumber(val) {
    return Number(val);
+   
 }
 
 /**
@@ -42,7 +43,7 @@ function convertToNumber(val) {
  */
 function convertToString(val) {
   return String(val);
-}
+}// return `${val}`
 
 /**
  * convertToShoutingText()
