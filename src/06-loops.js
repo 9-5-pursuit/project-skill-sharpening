@@ -11,7 +11,17 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+// declaring a variable to hold the sum total.
+  let result = 0; 
+//  A for ... loop to look through all the numbers 
+  for (let i = min; i <= max; i++){
+  // add the min and the max 
+  result += i;
+  }
+  // return the values.
+  return result;
+}
 
 /**
  * rangeOdd()
@@ -25,7 +35,20 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  // declring an array variable
+  let array = [];
+  // A foor ... loop to  run through all the numbers
+  for (let i = min; i <= max; i++) {
+    // conditional statement to check the if the number is odd or even
+    if (i % 2 !== 0) {
+ //code's line allowing to add the number at the beginning of the array.
+      array.unshift(i);
+    }
+  }
+return array;
+
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +62,18 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+// declaring an empty array variable result
+  let result = [];
+  // A for ... loop to run through all the numbers from the smallest to the greatest. By increementing by 2
+  for (let i = min; i <= max; i += 2) {
+  // code's line that allows to add an element at the end of the array.
+    result.push(i)
+  }
+  // return the empty array.
+  return result;
+
+}
 
 /**
  * containsWhileLoop()
@@ -61,7 +95,25 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+// declaring a new variable as our default one.
+  let gettingTarget = false;
+// initiation of the while loop by declaring the value of i to zero.
+  let i = 0;
+//  a while ... loop checking the length of the array.
+  while (i < array.length) {
+    // conditional statement to compare the value of the array to the target argument one.
+    if (array[i] === target) {
+  //  the returning boolean value after comparaison. 
+      gettingTarget = true;
+    }
+    // increementation of the while loop.
+    i++
+  }
+// returning the default value.
+  return gettingTarget;
+
+}
 
 /**
  * containsForLoop()
@@ -83,7 +135,16 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  // A for ... loop to run through each element of the array argument. 
+  for (let i = 0; i < array.length; i++) {
+    // conditional statement
+    if (array[i] === target) {
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * targetCount()
@@ -97,7 +158,16 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+
+  let result = 0;
+  for (let x = 0; x < array.length; x++){
+    if (array[x] === target) {
+      result++;
+    }
+  }
+  return result;
+}
 
 /**
  * firstIndexFound()
@@ -117,7 +187,18 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  // A for ...lop to run through the array to get the index.
+  for (let x = 0; x < array.length; x++) {
+  //  conditional statement to check if the index is equal to the target(number) by incrementing.
+   if (array[x] === target) {
+     return x;
+   }
+ }
+  // negative one become our default
+ return -1;
+
+}
 
 /**
  * lastIndexFound()
@@ -137,7 +218,18 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+// a for... loop to run through each element of the array until the end of the length.
+  for (let x = array.length - 1; x >= 0; x--) {
+    //  conditional statement to check if the index is equal to the target(number) by decrementing
+    if (array[x] === target) {
+      // commend line to return the value of the index comparing to the target
+      return x;
+    }
+  }
+  // negative one become our default
+  return -1;
+}
 
 /**
  * timesIndex()
@@ -151,7 +243,17 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+// declaring a variable for an empty new array 
+  let newArray = [];
+  // A for ... loop to run thorugh the valeus/ items of the array
+  for (let i = 0; i < array.length; i++){ 
+  //  conditional statement to check the index and multiply it by the value of that index by itself. 
+     newArray.push(array[i] * i);
+ }
+
+  return newArray;
+}
 
 /**
  * cumulativeSum()
@@ -165,7 +267,23 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+//  declaring a new variable to get the value total.
+  let result = 0;
+  // commend line declaring a new array.
+  let newArray = [];
+  // A for ... loop to run to each element of the arry until the end.
+  for (let i = 0; i < array.length; i++){
+    // commend line passing the value of array index to result.
+    result += array[i];
+    // commend line that putting the value total to the new array.
+    newArray.push(result);
+  }
+  // the default value.
+  return newArray;
+
+
+}
 
 // Do not change anything below this line.
 module.exports = {

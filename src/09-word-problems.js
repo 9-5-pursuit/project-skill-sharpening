@@ -19,7 +19,61 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+
+
+  let discountCalculator = 0;
+  let totalAmount = 0;
+  let ticketPrice = priceInCents;
+// 1000 10 true.
+  if ( age > 10 && age < 65 && (hasMembership ===false)){
+   // console.log(ticketPrice)
+    return ticketPrice;
+  } 
+
+  if (age >= 65 && (hasMembership === true )){
+  
+    discountCalculator = 0.3 * ticketPrice
+     
+    ticketPrice = ticketPrice - discountCalculator
+
+     return ticketPrice;
+   }
+
+    if ( age <= 10 && (hasMembership === true ) ){
+  
+    discountCalculator = 0.3 * ticketPrice
+     
+    ticketPrice = ticketPrice - discountCalculator
+
+     return ticketPrice;
+   }
+    if (age >= 65  ){
+  
+    discountCalculator = 0.1 * ticketPrice
+     
+    ticketPrice = ticketPrice - discountCalculator
+
+     return ticketPrice;
+   }
+    if (age <= 10  ){
+  
+    discountCalculator = 0.1 * ticketPrice
+     
+    ticketPrice = ticketPrice - discountCalculator
+
+     return ticketPrice;
+   } 
+    if (hasMembership = true){
+  
+    discountCalculator = 0.2 * ticketPrice
+     
+    ticketPrice = ticketPrice - discountCalculator
+    return ticketPrice;
+   }
+    
+ 
+}
 
 /**
  * getCartTotal()
@@ -40,7 +94,28 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+ 
+  let totalAmount = 0;
+
+  for (i = 0; i < products.length; i++){
+
+    let prodQuantity = products[i].quantity;
+
+    let price = products[i].priceInCents;
+
+    if(prodQuantity && price != 0){
+
+      totalAmount = ((prodQuantity * price) / 100)
+    }else {
+      return `cart is empty`;
+    } 
+
+  }
+
+
+  return totalAmount;
+}
 
 /**
  * compareLocations()
@@ -80,7 +155,36 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+// if (address1 != address2){
+// return `Addresses are not near each other.`
+// } 
+  // using a block of conditional statement to compare and check if two people live in the same: bulding, street and city.
+    if (
+      address1.street === address2.street &&
+      address1.city === address2.city &&
+      address1.state === address2.state &&
+      address1.zip === address2.zip
+    ) {
+      return "Same building.";
+    } else if (
+      address1.city === address2.city &&
+      address1.state === address2.state &&
+      address1.zip === address2.zip
+    ) {
+      return "Same city.";
+    } else if (address1.state === address2.state) {
+      return "Same state.";
+    } else if (address1 !== address2) {
+      return "Addresses are not near each other.";
+    }
+  }
+  
+// if(address1.state === address2.state){
+//   return `Same state.`
+// }
+
 
 /**
  * gradeAssignments()
@@ -127,7 +231,32 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+
+  for (let i = 0; i < assignments.length; i++){
+    const element = assignments[i];
+    if (element.kind === "PASS-FAIL") {
+      if (element.score.received === element.score.max) {
+        element.status = "PASSED"
+      } else if (element.score.received !== element.score.max) {
+        element.status = "FAILED";
+      }
+    } else if (element.kind === "PERCENTAGE") {
+      let percentScore = (element.score.received / element.score.max) * 100;
+      percentScore = percentScore.toFixed(1);
+      if (percentScore >= 80) {
+        element.status = `PASSED: ${percentScore}%`;
+      } else {
+        element.status = `FAILED: ${percentScore}%`;
+      }
+    } else if (element.kind === "ESSAY") {
+      element.status = `SCORE: ${element.score.received} / ${element.score.max}`
+    }
+  }
+
+  return assignments;
+
+}
 
 /**
  * createLineOrder()
@@ -152,7 +281,13 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+
+
+
+
+
+}
 
 module.exports = {
   applyDiscount,
