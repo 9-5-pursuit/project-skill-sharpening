@@ -150,6 +150,9 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
+//Function called "gradeAssignments" that takes in an array of objects called "assignments". It loops through the "assignments" array using a for loop. 
+//-->Checks the "kind" property. If it's equal to "PASS-FAIL", it will check if the "received" property of "score" is equal to the "max" property. If it is, it sets the "status" property to "PASSED". If it's not, it sets the "status" to "FAILED".
+//-----> If the "kind" property is equal to "PERCENTAGE", it checks if the ratio of "received" to "max" is greater than or equal to 0.80. If it is, it sets the "status" property to "PASSED" followed by the percentage in parentheses. If not, it sets the "status" to "FAILED" followed by the percentage in parentheses. If the "kind" is neither "PASS-FAIL" nor "PERCENTAGE", the "status" property is set to "SCORE" followed by the "received" and "max" properties.
 function gradeAssignments(assignments) {
   for (let i = 0; i < assignments.length; i++){
     if ( assignments[i].kind === 'PASS-FAIL'){
@@ -190,6 +193,7 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
+//Function called "createLineOrder" that takes in an array of objects called "people". It creates two arrays, "arr" and "arr2", and loops through the "people" array. If an object in the "people" array has a property "hasMembership" set to true, the name property of that object is pushed to "arr". If "hasMembership" is false, the name is pushed to "arr2". Finally, "arr" and "arr2" are concatenated and returned as the final "membersArray".
 function createLineOrder(people) {
   membersArray = [ ]
 
