@@ -98,7 +98,7 @@ function getCartTotal(products) {
  
   let totalAmount = 0;
 
-  for (i = 0; i <= products.length; i++){
+  for (i = 0; i < products.length; i++){
 
     let prodQuantity = products[i].quantity;
 
@@ -114,7 +114,7 @@ function getCartTotal(products) {
   }
 
 
-  return ` Your total ammount is : $${totalAmount}`
+  return totalAmount;
 }
 
 /**
@@ -157,17 +157,34 @@ function getCartTotal(products) {
  */
 function compareLocations(address1, address2) {
 
-if (address1 != address2){
-return `Addresses are not near each other.`
-} 
+// if (address1 != address2){
+// return `Addresses are not near each other.`
+// } 
+  // using a block of conditional statement to compare and check if two people live in the same: bulding, street and city.
+    if (
+      address1.street === address2.street &&
+      address1.city === address2.city &&
+      address1.state === address2.state &&
+      address1.zip === address2.zip
+    ) {
+      return "Same building.";
+    } else if (
+      address1.city === address2.city &&
+      address1.state === address2.state &&
+      address1.zip === address2.zip
+    ) {
+      return "Same city.";
+    } else if (address1.state === address2.state) {
+      return "Same state.";
+    } else if (address1 !== address2) {
+      return "Addresses are not near each other.";
+    }
+  }
+  
+// if(address1.state === address2.state){
+//   return `Same state.`
+// }
 
-if(address1.state === address2.state){
-  return `Same state.`
-}
-
-
-
-}
 
 /**
  * gradeAssignments()
@@ -216,8 +233,28 @@ if(address1.state === address2.state){
  */
 function gradeAssignments(assignments) {
 
+  for (let i = 0; i < assignments.length; i++){
+    const element = assignments[i];
+    if (element.kind === "PASS-FAIL") {
+      if (element.score.received === element.score.max) {
+        element.status = "PASSED"
+      } else if (element.score.received !== element.score.max) {
+        element.status = "FAILED";
+      }
+    } else if (element.kind === "PERCENTAGE") {
+      let percentScore = (element.score.received / element.score.max) * 100;
+      percentScore = percentScore.toFixed(1);
+      if (percentScore >= 80) {
+        element.status = `PASSED: ${percentScore}%`;
+      } else {
+        element.status = `FAILED: ${percentScore}%`;
+      }
+    } else if (element.kind === "ESSAY") {
+      element.status = `SCORE: ${element.score.received} / ${element.score.max}`
+    }
+  }
 
-
+  return assignments;
 
 }
 
@@ -244,7 +281,13 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+
+
+
+
+
+}
 
 module.exports = {
   applyDiscount,

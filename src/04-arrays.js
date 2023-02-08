@@ -122,7 +122,7 @@ function addElementToEndOfArray(array, element) {
  */
 function removeElementFromEndOfArray(array) {
 
-return array.pop(array.length-1);
+return array.pop(array.length-1);//return array.pop();
 
 
 }
@@ -159,7 +159,7 @@ function addElementToFrontOfArray(array, element) {
  */
 function removeElementFromFrontOfArray(array) {
 
-return array.shift([0]);
+return array.shift([0]);//
 
 }
 
@@ -180,7 +180,7 @@ return array.shift([0]);
 function getMiddleElement(array) {
 
 // middle element of a array is found by 
-  return array[(array.length-1)/2] 
+  return array[(array.length-1)/2] // let middleIten = Math.floor(array.length/2)
 
 
 }

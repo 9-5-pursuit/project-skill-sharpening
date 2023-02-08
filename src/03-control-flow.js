@@ -142,11 +142,11 @@ function aroundTheWorldGreeting(language) {
 
   return "Hello World";
 
-// } else if (language === `german`){
+//  if (language === `spanish) return "Holla Mundo";
 
-//   return "Hallo Welt";
-// }else {
-//   return `hello world`
+//if (language === "german") return "Hallo Welt";
+
+//   return `hello world`;
 // }
 
 }
@@ -252,11 +252,12 @@ function calculateLetterGrade(grade) {
  *  //> "1 pig"
  */
 function animalCounts(animal, numberOfAnimals) {
-if (animal.length-1 === `s`){
+if (numberOfAnimals > 1){
 
-  return `Number of Animal are more than one: ${numberOfAnimals} `
+return `${numberOfAnimals} ${animal}s`;
+
 }else {
-  
+  return `${numberOfAnimals} ${animal}`;
 }
 
 }

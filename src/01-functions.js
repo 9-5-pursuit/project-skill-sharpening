@@ -189,9 +189,10 @@ return flipSign;
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {
+function joinStringsWithSpaces(a, b, c, d, e) {
 
-return string;
+// code's line to join five differents string.      
+  return `${a} ${b} ${c} ${d} ${e}`;
 
 }
 

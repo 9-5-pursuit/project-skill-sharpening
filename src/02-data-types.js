@@ -145,7 +145,7 @@ if (num % 2 == 0){
 }else{
   return false;
 }
-
+// you can do it like num % 2 === 0; or 
 
 }
 
@@ -189,11 +189,15 @@ if (num % 2 == 1){
  */
 function isTruthy(val) {
 
- if (val ==false){
-  return false;
- }else { 
+ if (val){
   return true;
+ }else { 
+  return false;
  }
+// return val ? true : false;
+
+// return Boolean(val);
+// return !!val;
 
 }
 
@@ -212,11 +216,16 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  if (val ==false){
-  return true;
- }else { 
-  return false;
- }
+   return !val;
+  //  if (val){
+  //   return false;
+  //  }else { 
+  //   return true;
+  //  }
+  // return val ? true : false;
+  
+  // return Boolean(val);
+  // return !!val;
 }
 
 // Do not change the code below.

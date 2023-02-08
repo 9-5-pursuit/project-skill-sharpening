@@ -13,12 +13,14 @@
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForLoop(array) {
-  let newarray = [];
-for (i = 0; i <= array.length ; i++){
-newarray = array[i] +`!`
+  let newArray = [];
+  // A for...loop running to the array provided
+  for ( let i = 0; i < array.length; i++){
+  // commend line that take the index of the array making it equal to the and concanating an exclamation point to it
+newArray[i] = array[i] + `!`
 
 }
-return newarray
+return newArray
 }
 
 /**
@@ -37,9 +39,18 @@ return newarray
  */
 function shoutWhileLoop(array) {
 
-while(i)
+  let newArray = [];
+  // Iterate the variable i to initiate the while loop
+  let i = 0; 
+  while (i < array.length) {
+// take the new array at the index  and setting the value of it equal to the parameter array with the same index
+    newArray[i] = array[i] + `!`
+  // iterator/increement
+    i++
+  }  
+     return newArray;
+  }
 
-}
 
 /**
  * shoutForOfLoop()
@@ -55,7 +66,19 @@ while(i)
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+// setting up a new and empty array.
+let newArray = [];
+  // A for..of...loop where we define an iterator to run through the array provided until there is no more value.
+  for (const element of array){
+  // commend line that use the push method to place the value of element and concanating an exclamation point to it
+newArray.push(element + `!`)
+
+  }
+  // the default value.
+return newArray
+}
+
 
 /**
  * sumArray()
@@ -68,7 +91,16 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+// setting up a variable to hold the total value.
+  let result = 0;
+  // Using a for ... loop to run through the given parameter array.
+  for (let i = 0; i < array.length; i++){
+  // line that adding all the element of the array.
+    result += array[i];
+  }
+  return result;
+}
 
 /**
  * oddArray()
@@ -82,12 +114,19 @@ function sumArray(array) {}
  *  //> [ 11, 15, 37 ]
  */
 function oddArray(array) {
+  // setting up a new and empty array.
+  let newArray = [];
+  // Using a for ... loop to run through the given parameter array.
+  for (let i = 0; i < array.length; i++) {
+    // conditional statement checking if the array's index is even or odd.
+    if (array[i] % 2 !== 0) {
+      // commend line that use the push method to place the value of the index of this array. 
+      newArray.push(array[i]);
+    }
+  }
+    return newArray;
+  }
 
-for(i = array; i <= array.length; i +=2){
-  return array
-}
-
-}
 
 /**
  * evenArray()
@@ -100,7 +139,19 @@ for(i = array; i <= array.length; i +=2){
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+
+  let newArray = [];
+  // Using a for ... loop to run through the given parameter array.
+  for ( let i = 0; i < array.length; i++) {
+    // conditional statement checking if the array's index is even .
+    if (array[i] % 2 === 0) {
+      // commend line that use the push method to place the value of the index of this array.
+      newArray.push(array[i]);
+    } 
+  }
+  return newArray;
+}
 
 /**
  * findSmallest()
@@ -113,7 +164,15 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let smallest = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < smallest) {
+      smallest = array[i];
+    }
+  }
+  return smallest
+}
 
 /**
  * findLargest()
@@ -126,7 +185,16 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let largest = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+    }
+  }
+  return largest;
+
+}
 
 /**
  * findEqual()
@@ -143,7 +211,9 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  return array.includes(selected);
+}
 
 /**
  * removeDuplicates()
@@ -160,7 +230,19 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+ let newArray = [];
+ // Using a for ... loop to run through the given parameter array.
+ for (let i = 0; i < array.length; i++) {
+   // conditional statement checking if the array's index is even .
+   if (!newArray.includes(array[i])) {
+     // commend line that use the push method to place the value of the index of this array.
+     newArray.push(array[i]);
+   }
+ }
+ return newArray;
+
+}
 
 // Do not change any code below this line.
 module.exports = {

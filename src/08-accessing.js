@@ -126,7 +126,7 @@ function getFirstPhoneNumber(person) {
  */
 function getLastPhoneNumber(person) {
 
-  return person.numbers[1];
+  return person.numbers[person.numbers.length - 1];
 
 }
 
@@ -210,8 +210,9 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
+// commend line that use a spred operator that is taking all the key value pairs from any object that you spreding and spred it out
 
-  return 
+  return {...person.names, ...person.address, numbers: person.numbers}
 
 }
 
