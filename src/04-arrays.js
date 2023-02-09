@@ -97,7 +97,8 @@ function getLastElementOfArray(array) {
  *  //> [ 10, 9 ]
  */
 function addElementToEndOfArray(array, element) {
-
+array.push(element);
+return array;
 }
 
 /**
@@ -129,9 +130,8 @@ function removeElementFromEndOfArray(array) {
  *  //> [ 9, 10 ]
  */
 function addElementToFrontOfArray(array, element) {
- 
-
-
+  array.unshift(element);
+  return array;
 }
 
 /**
@@ -165,8 +165,8 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
-
-  return array.splice(1, 0 , `element`);
+let middleItem = Math.floor(array.length / 2);
+return array[middleItem];
 }
 
 // Do not change any code below this line.

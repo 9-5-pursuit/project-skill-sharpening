@@ -199,9 +199,16 @@ let fullAddy = person.address.street + " " + person.address.unit + ", " + person
     };
  */
 function getFlatObject(person) {
-;
+    let personObj = {};
+    for(let name of Object.keys(person.names)) {
+      personObj[name] = person.names[name];
+    }
+    for(let add of Object.keys(person.address)) {
+      personObj[add] = person.address[add];
+    }
+    personObj.numbers = person.numbers;
+    return personObj;
 
-  return [];
 
 }
 

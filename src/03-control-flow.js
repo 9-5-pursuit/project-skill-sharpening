@@ -176,7 +176,15 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
-  
+  if (grade >= "english") {
+    return "Hello World";
+  } else if (language === "spanish") {
+    return "Hola Mundo";
+  } else if (language === "german") {
+    return "Hallo Welt";
+  } else  { 
+    return "Hello World";
+  }
 
 }
 

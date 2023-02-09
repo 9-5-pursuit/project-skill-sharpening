@@ -171,7 +171,8 @@ function addKeyValuePairToObject(object, key, val) {
  *  //> { right: false }
  */
 function deleteKeyFromObject(object, key) {
-delete object.key
+delete object[`${key}`];
+delete object [key];
 return object;
   
 }
