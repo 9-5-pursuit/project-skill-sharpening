@@ -10,7 +10,6 @@
  *  //> {}
  */
 function createEmptyObject() {
-
   return Object();
 }
 
@@ -27,8 +26,8 @@ function createEmptyObject() {
  */
 function createObjectWithValue(val) {
   const frenchFries = {
-    size:val
-  }
+    size: val,
+  };
 
   return frenchFries;
 }
@@ -45,11 +44,10 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-const favPokemon = {
- [key]: `name`
-} 
-return favPokemon;
-
+  const favPokemon = {
+    [key]: `name`,
+  };
+  return favPokemon;
 }
 
 /**
@@ -66,8 +64,8 @@ return favPokemon;
  */
 function createObjectWithKeyValuePair(key, val) {
   const pair = {
-    key: val
-  }
+    [key]: val,
+  };
   return pair;
 }
 
@@ -83,7 +81,6 @@ function createObjectWithKeyValuePair(key, val) {
  *  //> "Jay"
  */
 function getNameFromObject(object) {
-
   return object.name;
 }
 
@@ -99,7 +96,6 @@ function getNameFromObject(object) {
  *  //> 30
  */
 function getAgeFromObject(object) {
-
   return object.age;
 }
 
@@ -116,9 +112,8 @@ function getAgeFromObject(object) {
  *  //> { left: true, key: false }
  */
 function addValueToObject(object, val) {
-object.lastName = val;
-return object;
-
+  object.lastName = val;
+  return object;
 }
 
 /**
@@ -134,9 +129,8 @@ return object;
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-object[key] = `right`;
-return object;
-
+  object[key] = `right`;
+  return object;
 }
 
 /**
@@ -153,9 +147,10 @@ return object;
  *  //> { up: true, left: false }
  */
 function addKeyValuePairToObject(object, key, val) {
-  object.middleName = val;
+  //add key-value pair to object
+  object[key] = val;
+  //return object
   return object;
-
 }
 
 /**
@@ -171,10 +166,9 @@ function addKeyValuePairToObject(object, key, val) {
  *  //> { right: false }
  */
 function deleteKeyFromObject(object, key) {
-delete object[`${key}`];
-delete object [key];
-return object;
-  
+  delete object[`${key}`];
+  delete object[key];
+  return object;
 }
 
 // Do not change any code below this line.
