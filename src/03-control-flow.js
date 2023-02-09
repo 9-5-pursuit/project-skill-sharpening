@@ -17,7 +17,7 @@
 function isEqual(a, b) {
   if (a === b) {
     return true;
-  }else {
+  } else {
     return false;
   }
 }
@@ -35,8 +35,7 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-
-return Math.max(a, b);
+  return Math.max(a, b);
 }
 
 /**
@@ -55,12 +54,11 @@ return Math.max(a, b);
  *  //> "tie"
  */
 function findLargerOrTie(a, b) {
-
-if (a === b) {
-  return "tie";
-} else {
-  return Math.max (a, b);
-}
+  if (a === b) {
+    return "tie";
+  } else {
+    return Math.max(a, b);
+  }
 }
 
 /**
@@ -86,7 +84,7 @@ function positiveNegativeOrZero(a) {
     return "Zero";
   } else if (a < 0) {
     return "Negative";
-  } else { 
+  } else {
     return "Positive";
   }
 }
@@ -117,10 +115,9 @@ function aroundTheWorldGreeting(language) {
     return "Hola Mundo";
   } else if (language === "german") {
     return "Hallo Welt";
-  } else  { 
+  } else {
     return "Hello World";
   }
-
 }
 
 /**
@@ -145,18 +142,16 @@ function aroundTheWorldGreeting(language) {
  *  //> "Hello World"
  */
 function aroundTheWorldGreetingWithSwitch(language) {
-
   switch (language) {
     case `english`:
-       return "Hello World";
+      return "Hello World";
     case `spanish`:
-       return "Hola Mundo";
-    case 'german':
-       return "Hallo Welt";
+      return "Hola Mundo";
+    case "german":
+      return "Hallo Welt";
     default:
-       return "Hello World";
-
-}
+      return "Hello World";
+  }
 }
 /**
  * calculateLetterGrade()
@@ -176,16 +171,18 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
-  if (grade >= "english") {
-    return "Hello World";
-  } else if (language === "spanish") {
-    return "Hola Mundo";
-  } else if (language === "german") {
-    return "Hallo Welt";
-  } else  { 
-    return "Hello World";
+  if (grade >= 90) {
+    return "A";
+  } else if (grade >= 80) {
+    return "B";
+  } else if (grade >= 70) {
+    return "C";
+  } else if (grade >= 60) {
+    return "D";
+  } else grade < 60;
+  {
+    return "F";
   }
-
 }
 
 /**
@@ -205,15 +202,12 @@ function calculateLetterGrade(grade) {
  *  //> "1 pig"
  */
 function animalCounts(animal, numberOfAnimals) {
-if (numberOfAnimals === 1) {
-  return `${numberOfAnimals} ${animal}`;
-
-} else (numberOfAnimals > 1); {
-  return `${numberOfAnimals} ${animal}s`;
-
-}
-
-  
+  if (numberOfAnimals === 1) {
+    return `${numberOfAnimals} ${animal}`;
+  } else numberOfAnimals > 1;
+  {
+    return `${numberOfAnimals} ${animal}s`;
+  }
 }
 
 /**
@@ -227,7 +221,7 @@ if (numberOfAnimals === 1) {
  * EXAMPLE:
  *  evenOrOdd(11);
  *  //> "Odd"
- * 
+ *
  *  evenOrOdd(48);
  *  //> "Even"
  */
@@ -254,8 +248,8 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
- tern = (a % 2 === 0) ?  `Even`: `Odd`;
- return tern
+  tern = a % 2 === 0 ? `Even` : `Odd`;
+  return tern;
 }
 
 // Do not change any code below this line.
