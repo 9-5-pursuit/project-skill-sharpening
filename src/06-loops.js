@@ -11,7 +11,17 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+// default val 0
+let total = 0;
+
+for (let i = min; i <= max; i++) {
+  total += i;
+}
+
+return total;
+
+}
 
 /**
  * rangeOdd()
@@ -25,7 +35,25 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+
+// odd number if its number % 2 and the remainder isnt 0
+// returns an array so default val is [];
+// decreasing order -> use i--? or unshift
+// nevermind i-- did an infinite loop so ig unshift
+
+function rangeOdd(min, max) {
+
+let oddNum = [];
+
+for (let i = min; i <= max; i++) {
+  if (i % 2 !== 0) {
+    oddNum.unshift(i);
+  }
+}
+
+return oddNum;
+
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +67,20 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+
+// default val array
+// increasing order + every other number
+function rangeEveryOther(min, max) {
+
+  let numArr = [];
+
+  for (let i = min; i <= max; i += 2) { // get every other number
+    numArr.push(i);
+  }
+
+  return numArr;
+
+}
 
 /**
  * containsWhileLoop()
@@ -61,7 +102,28 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+
+// use while loop
+// returns whether or not target is in array
+// dont use includes though
+// default val boolean ??? maybe
+// i = 0
+
+function containsWhileLoop(array, target) {
+
+  let result = false; // marked true the first time
+  let i = 0;
+
+  while (i < array.length) { // while length of array is greater than i
+    if (array[i] === target) {
+      result = true;
+    }
+    i++
+  }
+
+  return result;
+
+}
 
 /**
  * containsForLoop()
@@ -83,7 +145,22 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+
+// same thing as before but for loop
+
+function containsForLoop(array, target) {
+
+  let result = false; // marked true the first time
+
+  for (i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      result = true;
+    }
+  }
+
+  return result;
+
+}
 
 /**
  * targetCount()
@@ -97,7 +174,22 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+
+// default val 0
+
+function targetCount(array, target) {
+
+  let result = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      result++
+    }
+  }
+
+  return result;
+
+}
 
 /**
  * firstIndexFound()
@@ -117,7 +209,23 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+
+// returns first index that target is found, if not found return -1
+
+function firstIndexFound(array, target) {
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      // result = array.indexOf(target); forgot we werent supposed to use indexof sorry
+      return i
+     } // else if (array[i] !== target) {
+    //   return -1
+    // }
+  }
+
+  return -1;
+
+}
 
 /**
  * lastIndexFound()
@@ -137,7 +245,22 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+
+// basically the same as above but for last index
+
+function lastIndexFound(array, target) {
+// i = array.length - 1 because its looking for last index
+// i needs to be greater than 0
+
+  for (let i = array.length - 1; i > 0; i--) {
+    if (array[i] === target) {
+      return i;
+    }
+  }
+
+  return -1;
+
+}
 
 /**
  * timesIndex()
@@ -151,7 +274,23 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+
+// new array where each number * its index
+// default val [];
+// array[i] * i
+
+function timesIndex(array) {
+
+let result = [];
+
+  for (let i = 0; i < array.length; i++) {
+
+    result.push(array[i] * i);
+
+  }
+
+return result;
+}
 
 /**
  * cumulativeSum()
@@ -165,7 +304,25 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+
+// new arr where each sum is added to each other up until end of arr
+// default val [];
+// actually there should be two variables one default val and one for the sum
+// += adds val of right operand to a var and assigns result to var
+
+function cumulativeSum(array) {
+
+let result = [];
+let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+    result.push(sum);
+  }
+
+return result;
+
+}
 
 // Do not change anything below this line.
 module.exports = {

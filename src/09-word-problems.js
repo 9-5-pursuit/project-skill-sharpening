@@ -19,7 +19,30 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+
+// if attendee is age <= 10 || age >= 65 its a 10% discount
+// if hasMembership === true its 20%
+// if both its 30%
+
+function applyDiscount(priceInCents, age, hasMembership) {
+  let result = 0;
+
+  if ((age <= 10 || age >= 65) && (hasMembership === true)) {
+    result = priceInCents - (priceInCents * 0.3);
+    // console.log(result);
+  } else if (age <= 10 || age >= 65) {
+    result = priceInCents - (priceInCents * 0.1);
+  } else if (hasMembership === true) {
+    result = priceInCents - (priceInCents * 0.2);
+  } else {
+    result = 1000; // price with no discount
+  }
+
+  return result;
+
+}
+
+// console.log(applyDiscount(1000, 7, true));
 
 /**
  * getCartTotal()
@@ -40,7 +63,24 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+// gets total amount of all items in cart
+// price in cents * quantity = full cost of each product
+// default val is 0
+// loops through array to get product prices + adds them together and returns the sum of everything
+// += adds var + var to the right of it
+// based on test cases the price should be in dollars and cents
+function getCartTotal(products) {
+
+let cartSum = 0;
+
+  for (let i = 0; i < products.length; i++) {
+    cartSum += products[i].priceInCents * products[i].quantity // gets full cost of all products
+  }
+  cartSum = cartSum / 100; // get price in dollars + cents
+
+return `$${cartSum.toFixed(2)}` // $154.5 so i should round to nearest hundredth
+// added toFixed and got $154.50
+}
 
 /**
  * compareLocations()
@@ -80,7 +120,25 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+
+// function takes two objs and returns what is similar about them
+// no similarites: return "Addresses are not near each other."
+// default val is string
+// find similarities first in if/else statement, use else when theres no similarities
+
+function compareLocations(address1, address2) {
+
+  if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return "Same building.";
+  } else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return "Same city."
+  } else if (address1.state === address2.state) { // was going to put zip but you can live in two different zip codes and be in the same state
+    return "Same state.";
+  } else {
+    return "Addresses are not near each other.";
+  }
+
+}
 
 /**
  * gradeAssignments()
@@ -127,8 +185,52 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
 
+// score.received = score.max -> set status to "PASSED" if pass fail
+// if kind is percentage, passed is 80% with one decimal point (80.0%), set status to fail: percentage if lower than 80
+// if other kind, set status to score: received/max
+// returns modified array
+function gradeAssignments(assignments) {
+
+  for (let i = 0; i < assignments.length; i++) {
+    const assignScore = assignments[i];
+    // console.log(assignScore);
+
+    if (assignScore.kind === "PASS-FAIL") {
+      //  console.log(assignScore.kind);
+      if (assignScore.score.received === assignScore.score.max) { // passed
+        assignScore.status = "PASSED";
+      } else if (assignScore.score.received !== assignScore.score.max) {
+        assignScore.status = "FAILED";
+        // console.log(assignScore.status);
+      }
+      
+    } else if (assignScore.kind === "PERCENTAGE") {
+      let assignScorePercent = ((assignScore.score.received / assignScore.score.max) * 100) // scores given are out of 10
+      assignScorePercent = assignScorePercent.toFixed(1); // single decimal point
+      // console.log(assignScore.kind);
+     
+      // passed or failed: ${assignScorePercent}%
+      if (assignScorePercent >= 80) {
+        assignScore.status = `PASSED: ${assignScorePercent}%`;
+      } else if (assignScorePercent <= 80) {
+        assignScore.status = `FAILED: ${assignScorePercent}%`;
+      }
+
+    } else if ((assignScore.kind !== "PASS-FAIL") && (assignScore.kind !== "PERCENTAGE")) {
+      assignScore.status = `SCORE: ${assignScore.score.received}/${assignScore.score.max}`; // example score: 4/5
+    }
+
+  }
+
+// return assignScore;
+return assignments;
+
+  }
+
+
+
+// console.log(gradeAssignments());
 /**
  * createLineOrder()
  * ---------------------
@@ -152,7 +254,32 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+
+// priority -> membership > order of arrival
+// person at index 0 arrived first, index 1 arrived second, etc etc
+// returns arr that has only their names, reordered based on if they have a membership. if they have one, put them in order by who arrived first
+// default val is [];
+// two initial variables, for members and not members
+// loop through array to check if they have membership + check arr index
+
+function createLineOrder(people) {
+  let member = [];
+  let notMember = [];
+
+  for (let i = 0; i < people.length; i++) {
+    const peopleArr = people[i];
+
+    if (peopleArr.hasMembership === true) {
+      member.push(peopleArr.name); // returns just their name not their membership status
+    } else if (peopleArr.hasMembership === false) {
+      notMember.push(peopleArr.name);
+    }
+  }
+// array.concat()
+  return member.concat(notMember);
+
+
+}
 
 module.exports = {
   applyDiscount,
