@@ -212,8 +212,23 @@ function getFullAddress(person) {
 // object.assign maybe ??? and maybe object.keys too
 // have to make a new object first though
 // nvm object.assign is too confusing
+// oh god i have to do it manually
 
 function getFlatObject(person) {
+
+  let flatObj = {
+    first: person.names.first,
+    middle: person.names.middle,
+    last: person.names.last,
+    street: person.address.street,
+    unit: person.address.unit,
+    city: person.address.city,
+    state: person.address.state,
+    zip: person.address.zip,
+    numbers: person.numbers,
+  };
+
+  return flatObj;
 
 }
 
