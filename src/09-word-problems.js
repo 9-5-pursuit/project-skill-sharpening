@@ -95,6 +95,8 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
+// function checks if all the properties of "address1" and "address2" are equal. If the two addresses are in the same building, the function returns "Same building. "If not, the next check will see if the city, state, and zip of "address1" and "address2" are equal. If the two addresses are in the same city, the function returns "Same city." If not, the next check will see if the state of "address1" and "address2" are equal. If the two addresses are in the same state, the function returns "Same state." If all the above checks fail, the function returns "Addresses are not near each other."
+
 function compareLocations(address1, address2) {
   if ((address1.street === address2.street) && (address1.city === address2.city) && (address1.state === address2.state) && (address1.zip === address2.zip)){
     return "Same building."
