@@ -85,7 +85,9 @@ function sumArray(array) {
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  return array.filter((num) => num % 2 !== 0);
+}
 
 /**
  * evenArray()
@@ -98,7 +100,9 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  return array.filter((num) => num % 2 === 0);
+}
 
 /**
  * findSmallest()
