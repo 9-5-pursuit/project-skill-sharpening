@@ -14,7 +14,7 @@
 function rangeSum(min, max) {
   let sum = 0;
   for (let i = min; i <= max; i++) {
-  sum += 1;
+    sum += 1;
   }
   return sum;
 }
@@ -32,16 +32,14 @@ function rangeSum(min, max) {
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-let arr = [];
+  let arr = [];
   for (let i = min; i <= max; i++) {
-  if (i % 2 !== 0) {
-    arr.unshift(i);
-  }
- 
+    if (i % 2 !== 0) {
+      arr.unshift(i);
+    }
   }
   return arr;
 }
-
 
 /**
  * rangeEveryOther()
@@ -59,7 +57,6 @@ function rangeEveryOther(min, max) {
   let arr = [];
   for (let i = min; i <= max; i += 2) {
     arr.push(i);
- 
   }
   return arr;
 }
@@ -85,12 +82,10 @@ function rangeEveryOther(min, max) {
  *  //> false
  */
 function containsWhileLoop(array, target) {
-let i = 0;
-while ( i < array.length) {
-  if (array[i] === target);
-}
-
-
+  let i = 0;
+  while (i < array.length) {
+    if (array[i] === target);
+  }
 }
 
 /**
@@ -114,11 +109,9 @@ while ( i < array.length) {
  *  //> false
  */
 function containsForLoop(array, target) {
- 
   for (let i = 0; i < array.length; i++) {
-  if (array[i] === target) 
-  return true;
-}
+    if (array[i] === target) return true;
+  }
 }
 /**
  * targetCount()
@@ -133,15 +126,12 @@ function containsForLoop(array, target) {
  *  //> 2
  */
 function targetCount(array, target) {
-  for (let i = 0; i < array.length; i ++) {
-   if (array[i] === target) {
-    return i;
-   }
- 
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      return i;
+    }
   }
   return -1;
-
-
 }
 
 /**
@@ -162,7 +152,14 @@ function targetCount(array, target) {
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      return i;
+    }
+  }
+  return -1;
+}
 
 /**
  * lastIndexFound()
@@ -182,7 +179,9 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  console.log(array);
+}
 
 /**
  * timesIndex()
