@@ -11,7 +11,7 @@
  *  isEqual(10, 10);
  *  //> true
  *
- *  isEqual(10, "10");
+ *  isEqual(10, "10")
  *  //> false
  */
 function isEqual(a, b) {

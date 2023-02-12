@@ -26,7 +26,7 @@ function createEmptyObject() {
  */
 function createObjectWithValue(val) {
 return {object: val}
-// curly brackets creates and object and the input of the objects is val
+// curly brackets creates and object and the input of the objects is valq
 }
 
 /**
@@ -103,6 +103,7 @@ function getAgeFromObject(object) {
  *  //> { left: true, key: false }
  */
 function addValueToObject(object, val) {
+  // set key1 in object to param val using dot notation.
 object.key1=val
 return object
 }
@@ -120,6 +121,7 @@ return object
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
+  // sets the key param to "any value" using bracket notation and using the key param dynamically by using the back ticks and curly brackets
   object[`${key}`] = "any value"
   return object
 }
@@ -138,6 +140,7 @@ function addKeyToObject(object, key) {
  *  //> { up: true, left: false }
  */
 function addKeyValuePairToObject(object, key, val) {
+  // add the key value pair using bracket notations, using back ticks to access the key param
   object[`${key}`] = val
   return object
 }
@@ -155,6 +158,7 @@ function addKeyValuePairToObject(object, key, val) {
  *  //> { right: false }
  */
 function deleteKeyFromObject(object, key) {
+  // Use the delete operator to delete the key from the object
   delete object[`${key}`]
   return object
 }

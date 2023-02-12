@@ -10,6 +10,7 @@
  *  //> true
  */
 function alwaysTrue() {
+  // simply return boolean
   return true
 }
 
@@ -27,6 +28,7 @@ function alwaysTrue() {
  *  //> "Hello, Ian."
  */
 function greet(name) {
+  // concatenate the string and param using the plus
   return "Hello, " + name +"."
 }
 
@@ -44,6 +46,7 @@ function greet(name) {
  *  //> 30
  */
 function add(a,b) {
+  // add two params a and b, set the result to the variable sum1, return variable.
   let sum1 = a + b
   return sum1
 }
@@ -62,6 +65,7 @@ function add(a,b) {
  *  //> 10
  */
 function multiply(a,b) {
+  // multiply param a and b, set the result to product, and return the product.
   let product = a * b
   return product
 }
@@ -85,6 +89,7 @@ function multiply(a,b) {
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a,b) {
+  // add the params (number) and divide by two because there are two numbers, set result to average variable, return average
   let average = (a + b)/2
   return average 
 }
@@ -107,6 +112,7 @@ function average(a,b) {
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a,b,c) {
+// add the params (number) and divide by thre because there are three numbers, set result to average variable, return average
   let average = (a + b + c)/3
   return average
 }

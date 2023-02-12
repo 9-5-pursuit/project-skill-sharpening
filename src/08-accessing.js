@@ -115,6 +115,7 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
+  //  if the numbers array has more or equal to one index return the last  index (numbers.length-1)
   if (person.numbers >= 1) {
   console.log(numbers.length-1)
   }
@@ -196,6 +197,7 @@ function getFullAddress(person) {
 function getFlatObject(person) {
   // let newPerson = person.flat(0,1)
   // return newPerson
+  // use spread operator to flatten name and address array
 return {...person.name, ...person.address, numbers:person.numbers}
 }
 

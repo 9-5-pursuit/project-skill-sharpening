@@ -166,6 +166,7 @@ function targetCount(array, target) {
  */
 function firstIndexFound(array, target) {
   for (let i = 0; i < array.length; i++) {
+    // if element of array equal target parameter, return element
     if (array[i] === target) {
       return i
     }
@@ -198,6 +199,7 @@ function lastIndexFound(array, target) {
   //   return []
 array.findIndex(target)
 console.log(array.indexOf(`${target}`))
+// used findIndex to iterate through the loop without using for loop to find target
 
   }
 
@@ -214,10 +216,14 @@ console.log(array.indexOf(`${target}`))
  *  //> [ 0, 10, 22 ]
  */
 function timesIndex(array) {
+  // set accumulator newArray equal to empty array
   let newArray = []
+  //  use for loop to iterate through the array
   for (let i = 0; i < array.length; i++) {
+    // use .push to add element(array[i]) that has been multiplied by its index(i)
     newArray.push(array[i] * i)
     }
+    // else return accumulator
     return newArray
 }
 
@@ -234,12 +240,16 @@ function timesIndex(array) {
  *  //> [ 5, 7, 16 ]
  */
 function cumulativeSum(array) {
+  // set two accumulators sum set to 0 and newArray set to empty array
   let sum = 0
   let newArray = []
+  // for loop to iterate through array
   for (let i = 0; i < array.length; i++) {
+  // add each element in array until end of array and push sum into accumulator
     sum += array[i];
     newArray.push(sum)
   }
+  // else return accumulator
   return newArray
 }
 
