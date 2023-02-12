@@ -9,7 +9,10 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  // simply return boolean
+  return true
+}
 
 /**
  * greet()
@@ -24,7 +27,10 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  // concatenate the string and param using the plus
+  return "Hello, " + name +"."
+}
 
 /**
  * add()
@@ -39,7 +45,11 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a,b) {
+  // add two params a and b, set the result to the variable sum1, return variable.
+  let sum1 = a + b
+  return sum1
+}
 
 /**
  * multiply()
@@ -54,7 +64,11 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a,b) {
+  // multiply param a and b, set the result to product, and return the product.
+  let product = a * b
+  return product
+}
 
 /**
  * average()
@@ -74,7 +88,11 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a,b) {
+  // add the params (number) and divide by two because there are two numbers, set result to average variable, return average
+  let average = (a + b)/2
+  return average 
+}
 
 /**
  * averageThree()
@@ -93,7 +111,11 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+// add the params (number) and divide by thre because there are three numbers, set result to average variable, return average
+  let average = (a + b + c)/3
+  return average
+}
 
 /**
  * compareTypes()
@@ -112,7 +134,13 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a,b) {
+  if (typeof a === typeof b) {
+    return true
+  } else {
+    return false
+  }
+}
 
 /**
  * flipSign()
@@ -131,7 +159,9 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(number) {
+  return number * -1
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +181,9 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a,b,c,d,e) {
+  return `${a} ${b} ${c} ${d} ${e}`
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +200,13 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  let firstLetter = a.charAt(0)
+  let lastLetter = a.charAt(a.length-1)
+
+    return firstLetter + lastLetter
+
+}
 
 // Do not change the code below.
 module.exports = {

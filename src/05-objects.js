@@ -9,7 +9,9 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  return {}
+}
 
 /**
  * createObjectWithValue()
@@ -22,7 +24,10 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+return {object: val}
+// curly brackets creates and object and the input of the objects is valq
+}
 
 /**
  * createObjectWithKey()
@@ -35,7 +40,9 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  return {[`${key}`]: "any value"}
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,7 +56,9 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  return {[`${key}`]: val}
+}
 
 /**
  * getNameFromObject()
@@ -62,7 +71,9 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  return object.name
+}
 
 /**
  * getAgeFromObject()
@@ -75,7 +86,9 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+  return object.age
+}
 
 /**
  * addValueToObject()
@@ -89,7 +102,11 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  // set key1 in object to param val using dot notation.
+object.key1=val
+return object
+}
 
 /**
  * addKeyToObject()
@@ -103,7 +120,11 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  // sets the key param to "any value" using bracket notation and using the key param dynamically by using the back ticks and curly brackets
+  object[`${key}`] = "any value"
+  return object
+}
 
 /**
  * addKeyValuePairToObject()
@@ -118,7 +139,11 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  // add the key value pair using bracket notations, using back ticks to access the key param
+  object[`${key}`] = val
+  return object
+}
 
 /**
  * deleteKeyFromObject()
@@ -132,7 +157,11 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  // Use the delete operator to delete the key from the object
+  delete object[`${key}`]
+  return object
+}
 
 // Do not change any code below this line.
 module.exports = {
